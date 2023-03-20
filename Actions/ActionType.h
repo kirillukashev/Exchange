@@ -10,7 +10,8 @@ enum ActionType {
   ADD,
   DELETE,
   STAGE,
-  EXECUTE_ALL
+  EXECUTE_ALL,
+  NULL0
 };
 
 #endif //EXCHANGE_ACTIONTYPE_H
