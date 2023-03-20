@@ -1,5 +1,7 @@
 #include "Stock.h"
 
+Stock::Stock() {}
+
 Stock::Stock(std::string ticker, double open_price, double close_price, double low_price, double high_price) :
   open_price_(open_price),
   close_price_(close_price),
@@ -47,4 +49,13 @@ double Stock::GetHighPrice() {
 
 void Stock::SetHighPrice(double high_price) {
   this->high_price_ = high_price;
+}
+
+std::string Stock::ToString() {
+  std::string str_open_price = std::to_string(GetOpenPrice());
+  std::string str_close_price = std::to_string(GetClosePrice());
+  std::string str_low_price = std::to_string(GetLowPrice());
+  std::string str_high_price = std::to_string(GetHighPrice());
+  return "Stock{ticker = '" + GetTicker() + "', open_price = " + str_open_price + ", close_price = "
+  + str_close_price + ", low_price = " + str_low_price + ", high_price = " + str_high_price + "}";
 }

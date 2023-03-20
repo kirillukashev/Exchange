@@ -5,7 +5,9 @@
 
 class Stock {
  public:
+  Stock();
   Stock(std::string ticker, double open_price, double close_price, double low_price, double high_price);
+
   std::string GetTicker();
   void SetTicker(std::string ticker);
   double GetOpenPrice();
@@ -16,6 +18,7 @@ class Stock {
   void SetLowPrice(double high_price);
   double GetHighPrice();
   void SetHighPrice(double high_price);
+  std::string ToString();
  private:
   std::string ticker_;
   double open_price_;
