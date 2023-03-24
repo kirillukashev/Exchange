@@ -14,4 +14,5 @@ add_executable(Exchange
 
 add_executable(check
         Company/Stock.cpp
+        Company/Company.cpp
         check.cpp)

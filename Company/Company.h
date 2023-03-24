@@ -4,8 +4,9 @@
 #include <algorithm>
 #include "Stock.h"
 
-std::vector<std::string> category_list = {"ENERGY", "MATERIALS", "INDUSTRY", "FINANCE", "IT"};
-
+const std::vector<std::string> category_list = {"ENERGY", "MATERIALS", "INDUSTRY", "FINANCE", "IT"};
+//Company(std::string name, std::string ticker, std::string category, double open_price,
+//double close_price, double low_price, double high_price) {
 class Company {
  public:
   Company();
@@ -20,6 +21,7 @@ class Company {
   Stock GetStock();
   void SetStock(Stock stock);
   std::string GetCategory();
+  void SetCategory(std::string category);
   std::string ToString();
  private:
   std::string name_;
