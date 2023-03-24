@@ -46,8 +46,19 @@ std::string Company::GetCategory() {
   return category_list[this->category_index_];
 }
 
+void Company::SetCategory(std::string category) {
+  bool f = 0;
+  for (int i = 0; i < category_list.size(); ++i) {
+    if (category == category_list[i]) {
+      this->category_index_ = i;
+      f = 1;
+      break;
+    }
+  }
+  if (!f) throw std::invalid_argument("This category does not exist");
+}
+
 std::string Company::ToString() {
-  return "6";
-  //return "Сompany{name = '" + GetName() + "', category = '" + GetCategory() +
-  //"', stock = " + this->stock_.ToString();
+  return "Company{name = '" + GetName() + "', category = '" + GetCategory() +
+  "', stock = " + this->stock_.ToString();
 }
