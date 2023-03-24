@@ -5,8 +5,7 @@
 #include "Stock.h"
 
 const std::vector<std::string> category_list = {"ENERGY", "MATERIALS", "INDUSTRY", "FINANCE", "IT"};
-//Company(std::string name, std::string ticker, std::string category, double open_price,
-//double close_price, double low_price, double high_price) {
+
 class Company {
  public:
   Company();
