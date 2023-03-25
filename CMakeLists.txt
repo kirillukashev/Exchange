@@ -15,6 +15,10 @@ add_executable(Exchange
         Company/Stock.cpp
         main.cpp)
 
+#add_executable(check
+#        Company/Stock.cpp
+#        check.cpp)
+
 add_executable(Exchange2
         Trader/Trader.cpp)
 
