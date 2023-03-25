@@ -1,6 +1,8 @@
 #pragma once
+
 enum ActionType {
   SHOW,
+  SHOW_CATEGORY,
   ADD,
   DELETE,
   STAGE,
