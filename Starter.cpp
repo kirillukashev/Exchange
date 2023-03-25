@@ -10,9 +10,9 @@ std::vector<std::string> Starter::split(const std::string& s, std::vector<std::s
 }
 
 std::vector<std::string> Starter::interpret(std::vector<std::string> parsed) {
-  if (parsed.size() >= 1) {
-    for (int i = 0; i < parsed.size(); i++) {
-      std::transform(parsed[i].begin(), parsed[i].end(), parsed[i].begin(), ::toupper);
+  if (!parsed.empty()) {
+    for (auto & i : parsed) {
+      std::transform(i.begin(), i.end(), i.begin(), ::toupper);
     }
     std::string leader = parsed[0];
     std::string actionTypeString;
@@ -40,13 +40,12 @@ std::vector<std::string> Starter::interpret(std::vector<std::string> parsed) {
               "  COMPANY:",
               "    COMPANY SHOW ticker?",
               "    COMPANY SHOW_ALL",
-              "    COMPANY SHOW_CATEGORY category?",
-              "    COMPANY ADD name? ticker? category? open_price? close_price? low_price? high_price?",
+              "    COMPANY ADD name? ticker? open_price? close_price? low_price? high_price?",
               "    COMPANY DELETE ticker?",
               "  TRADER:",
               "    TRADER SHOW id?",
               "    TRADER SHOW_ALL",
-              "    TRADER ADD name? funds? holdings(format:\"{ticker:quantity, ticker2:quantity2}\")?",
+              "    TRADER ADD name? currency? holdings(format:\"{ticker:quantity, ticker2:quantity2}\")?",
               "    TRADER DELETE id?",
               "  ORDER:",
               "    ORDER SHOW_ALL",
@@ -56,7 +55,7 @@ std::vector<std::string> Starter::interpret(std::vector<std::string> parsed) {
       };
     }
   }
-  return std::vector<std::string>();
+  return {};
 }
 
 void Starter::startSession() {
@@ -66,13 +65,13 @@ void Starter::startSession() {
     std::transform(s.begin(), s.end(), s.begin(), ::toupper);
     std::vector<std::string> parsed;
     split(s, parsed);
-    if (parsed.size() >= 1 && (parsed[0] == "EXIT"
+    if (!parsed.empty() && (parsed[0] == "EXIT"
                                || parsed[0] == "QUIT"
                                || parsed[0] == "Q")) {
       return;
     }
     std::vector<std::string> interpreted = interpret(parsed);
-    for (std::string i : interpreted) {
+    for (const std::string& i : interpreted) {
       std::cout << i;
     }
   }
