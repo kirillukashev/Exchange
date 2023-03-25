@@ -1,95 +1,43 @@
-//
-// Created by lis on 18.03.2023.
-//
-
+#pragma once
 #include <iostream>
-//#include "../Company/Stock"
+#include "../Company/Stock.h"
 #include <unordered_map>
-
-#ifndef EXCHANGE_TRADER_H
-#define EXCHANGE_TRADER_H
 
 static int count = 0;
 
 class Trader {
  private:
-  long id;
-  std::string name;
-  double currency;
-//  std::unordered_map<Stock, int> holdings; // stock, count
-//
+  long id_;
+  std::string name_;
+  double currency_;
+  std::unordered_map<Stock, int> holdings_; // stock, count
+
  public:
-//  Trader(std::string name, double currency, std::unordered_map<Stock, int> holdings) :
-//         name(name), currency(currency), holdings(holdings) {
-//    id = count++;
-//  }
+  Trader(std::string name, double currency, std::unordered_map<Stock, int> holdings);
 
-  Trader(std::string name, double currency) : name(name), currency(currency) {
-    id = count++;
-  }
+  Trader(std::string name, double currency);
 
-  long GetId() {
-    return id;
-  }
+  long GetId();
 
-  void SetId(long id) {
-    this->id = id;
-  }
+  void SetId(long id);
 
-  std::string GetName() {
-    return name;
-  }
+  std::string GetName();
 
-  void SetName(std::string name) {
-    this->name = name;
-  }
+  void SetName(std::string name);
 
-  double GetCurrency() {
-    return currency;
-  }
+  double GetCurrency();
 
-  void SetCurrency(double currency) {
-    this->currency = currency;
-  }
+  void SetCurrency(double currency);
 
-//  std::unordered_map<Stock, int> GetHoldings() {
-//    return holdings;
-//  }
-//
-//  int GetHolding(Stock s) {
-//    return holdings[s];
-//  }
-//
-//  void SetHoldings(HashMap<Stock, Integer> holdings) {
-//    this->holdings = holdings;
-//  }
+  std::unordered_map<Stock, int> GetHoldings();
 
-//  void PutHolding(Stock s, int q) {
-//    holdings[s] += q;
-//  }
-//
-//  std::string toStringHoldings() {
-//    if (holdings.size() == 0) {
-//      return "{}";
-//    }
-//    std::string return_str = "{";
-//    for (Stock s : holdings.keySet()) {
-//      return_str += "{stock = " + s.getTicker() + ", quantity = " + holdings.get(s) + "}, ";
-//    }
-//    return_str = return_str.substr(0, return_str.size() - 1);
-//    return_str += "}";
-//    return return_str;
-//  }
+  int GetHolding(Stock s);
 
-//  std::string ToString() {
-//    std::string return_ans = "Trader{id = " + std::to_string(id) +
-//    ", name = " + name +
-//    ", currency = " + std::to_string(currency) +
-//    ", holdings = " + toStringHoldings() +
-//    '}';
-//  }
+  void SetHoldings(std::unordered_map<Stock, int> holdings);
 
-  // ToString?
+  void PutHolding(Stock s, int q);
+
+  std::string toStringHoldings();
+
+  std::string ToString();
 };
-
-#endif //EXCHANGE_TRADER_H

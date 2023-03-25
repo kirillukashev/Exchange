@@ -1,17 +1,10 @@
-//
-// Created by lis on 18.03.2023.
-//
 #include "ActionType.h"
-
-#ifndef EXCHANGE_ACTIONHANDLER_H
-#define EXCHANGE_ACTIONHANDLER_H
-
+#include <iostream>
 
 class ActionHandler {
  public:
   StockExchange context;
 
+  static std::string getActionString(ActionType action);
+  static ActionType getActionType(std::string actionString);
 };
-
-
-#endif //EXCHANGE_ACTIONHANDLER_H
