@@ -8,7 +8,7 @@ std::vector<std::string> TraderActionHandler::HandleAction(Action action) {
     case SHOW:
       if (arguments.size() == 1) {
         long id = std::stol(arguments[0]);
-        Trader* t = context.getTrader(id); // From StockExchange
+        Trader* t = context.GetTrader(id); // From StockExchange
         if (t != nullptr) {
           return_ans.push_back(t->ToString());
         } else {
@@ -40,8 +40,8 @@ std::vector<std::string> TraderActionHandler::HandleAction(Action action) {
           if (arguments.size() >= 4 && arguments.size() % 2 == 0) {
             for (int i = 2; i < arguments.size(); i += 2) {
               std::transform(arguments[i].begin(), arguments[i].end(), arguments[i].begin(), ::toupper);
-              Company c = context.getCompany(arguments[i]);
-              bool temp = t.PutHolding(context.getCompany(arguments[i]).getStock(), std::stoi(arguments[i + 1]));
+              Company* c = context.GetCompany(arguments[i]);
+              bool temp = t.PutHolding(context.GetCompany(arguments[i]).GetStock(), std::stoi(arguments[i + 1]));
               if (temp) {
                 continue;
               }
@@ -63,15 +63,15 @@ std::vector<std::string> TraderActionHandler::HandleAction(Action action) {
     case DELETE:
       if (arguments.size() == 1) {
         std::string id_str = arguments[0];
-        Trader *t = context.getTrader(std::stol(id_str));
+        Trader *t = context.GetTrader(std::stol(id_str));
         if (t != nullptr) {
-          if (context.deleteTrader(t)) {
+          if (context.DeleteTrader(t)) {
 //              return_ans.push_back("Deleted " + t.ToString());
           } else {
             return_ans.push_back("Failed to delete trader " + id_str);
           }
         } else {
-          return_ans.push_back("Trader with id " + id_str + " isn't registered with " + context.getName());
+          return_ans.push_back("Trader with id " + id_str + " isn't registered with " + context.GetName());
         }
       } else {
         return_ans.push_back("Usage: TRADER DELETE id?");
@@ -85,4 +85,5 @@ std::vector<std::string> TraderActionHandler::HandleAction(Action action) {
               "  TRADER ADD name? currency? holdings(format:\"{ticker:quantity, ticker2:quantity2, ...}\")?");
       return_ans.push_back("  TRADER DELETE id?");
   }
+  return return_ans;
 }

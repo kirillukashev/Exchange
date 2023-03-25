@@ -1,8 +1,9 @@
 #include <iostream>
 #include "StockExchange.h"
 #include "Starter.h"
+#include <Stock.h>
 
-int main() {
+/*int main() {
   std::cout << "Please, enter name of Stock Exchange: \n>> ";
   std::string stock_exchange_name;
   std::cin >> stock_exchange_name;
@@ -34,4 +35,4 @@ int main() {
     }
   } while (control != 4);
   return 0;
-}
+}*/
