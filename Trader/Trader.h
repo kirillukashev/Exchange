@@ -8,6 +8,7 @@ static int count = 0;
 
 class Trader {
  public:
+  Trader();
   Trader(std::string name, double currency, std::unordered_map<Stock, int> holdings);
   Trader(std::string name, double currency);
 
