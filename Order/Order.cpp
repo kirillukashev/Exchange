@@ -2,21 +2,19 @@
 
 Order::Order() {}
 
-Order::Order(Trader trader, Stock stock, Type type, int quantity, double rate) {
-  this->trader_ = trader;
-  this->stock_ = stock;
-  this->type_ = type;
-  this->quantity_ = quantity;
-  this->rate_ = rate;
-}
+Order::Order(Trader trader, Stock stock, Type type, int quantity, double rate) :
+  trader_(trader),
+  stock_(stock),
+  type_(type),
+  quantity_(quantity),
+  rate_(rate) {}
 
-Order::Order(Trader trader, Stock stock, std::string type, int quantity, double rate) {
-  this->trader_ = trader;
-  this->stock_ = stock;
-  this->type_ = Type(type);
-  this->quantity_ = quantity;
-  this->rate_ = rate;
-}
+Order::Order(Trader trader, Stock stock, std::string type, int quantity, double rate) :
+  trader_(trader),
+  stock_(stock),
+  type_(Type(type)),
+  quantity_(quantity),
+  rate_(rate) {}
 
 Trader Order::GetTrader() {
   return this->trader_;

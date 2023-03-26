@@ -9,7 +9,7 @@ std::string Type::GetStringFromType(OrderType type) {
     case TRANSACTION:
       return "TRANSACTION";
     default:
-      return "NULL0";
+      return "NULL";
   }
 }
 
