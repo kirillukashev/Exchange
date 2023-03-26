@@ -1,6 +1,6 @@
 #include "Starter.h"
 
-std::vector<std::string> Starter::split(const std::string& s, std::vector<std::string>& elems) {
+std::vector<std::string> Starter::Split(const std::string& s, std::vector<std::string>& elems) {
   std::stringstream ss(s);
   std::string item;
   while(std::getline(ss, item, ' ')) {
@@ -9,7 +9,7 @@ std::vector<std::string> Starter::split(const std::string& s, std::vector<std::s
   return elems;
 }
 
-std::vector<std::string> Starter::interpret(std::vector<std::string> parsed) {
+std::vector<std::string> Starter::Interpret(std::vector<std::string> parsed) {
   if (!parsed.empty()) {
     for (auto & i : parsed) {
       std::transform(i.begin(), i.end(), i.begin(), ::toupper);
@@ -31,7 +31,7 @@ std::vector<std::string> Starter::interpret(std::vector<std::string> parsed) {
     if (leader == "COMPANY") {
 //        return CompanyActionHandler.HandleAction(action);
     } else if (leader == "TRADER") {
-        return TraderActionHandler.HandleAction(action);
+        return TraderActionHandler::HandleAction(action);
     } else if (leader == "ORDER") {
 //        return OrderActionHandler.HandleAction(action);
     } else {
@@ -58,19 +58,19 @@ std::vector<std::string> Starter::interpret(std::vector<std::string> parsed) {
   return {};
 }
 
-void Starter::startSession() {
+void Starter::StartSession() {
   std::string s;
   while (true) {
     std::getline(std::cin, s);
     std::transform(s.begin(), s.end(), s.begin(), ::toupper);
     std::vector<std::string> parsed;
-    split(s, parsed);
+    Split(s, parsed);
     if (!parsed.empty() && (parsed[0] == "EXIT"
                                || parsed[0] == "QUIT"
                                || parsed[0] == "Q")) {
       return;
     }
-    std::vector<std::string> interpreted = interpret(parsed);
+    std::vector<std::string> interpreted = Interpret(parsed);
     for (const std::string& i : interpreted) {
       std::cout << i;
     }

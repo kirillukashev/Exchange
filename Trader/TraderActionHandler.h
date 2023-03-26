@@ -9,6 +9,6 @@
 #include "../Company/Company.h"
 
 class TraderActionHandler : public ActionHandler {
-
-  std::vector<std::string> HandleAction(Action action);
+ public:
+  static std::vector<std::string> HandleAction(const Action& action);
 };

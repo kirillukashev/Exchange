@@ -21,7 +21,7 @@ bool StockExchange::DeleteTrader(long id) {
 }
 
 bool StockExchange::DeleteTrader(Trader* t) {
-  for (auto it = traders_.begin(); it != traders_.end(); ++it) {
+  for (std::vector<Trader>::iterator it = traders_.begin(); it != traders_.end(); ++it) {
     if (it->GetId() == t->GetId()) {
       traders_.erase(it);
       return true;
@@ -93,9 +93,19 @@ bool StockExchange::DeleteCompany(std::string ticker) {
   return false;
 }
 
+template<typename T>
+std::string StockExchange::ToString(std::vector<T> vector) {
+  std::string ans = "{";
+  for (auto x : vector) {
+    ans += x.ToString();
+  }
+  ans += "}";
+  return ans;
+}
+
 std::string StockExchange::ToString() {
   std::string return_ans =  "StockExchange {name='" + name_ + '\'' +
-                            ", publiclyListedCompanies=" + companies_.ToString() +
-                            ", orders=" + orders_.ToString() + '}';
+                            ", publiclyListedCompanies=" + ToString(companies_) +
+                            ", orders=" + ToString(orders_) + '}';
   return return_ans;
 }

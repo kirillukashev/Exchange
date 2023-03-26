@@ -7,6 +7,8 @@
 #include "Trader/Trader.h"
 #include "Company/Company.h"
 
+
+
 class StockExchange {
  public:
   StockExchange() = default;
@@ -24,6 +26,8 @@ class StockExchange {
   bool DeleteTrader(long id);
   std::string ToString();
   std::string GetName();
+  template<typename T>
+  std::string ToString(std::vector<T> vector);
  private:
   std::string name_;
   std::vector<Company> companies_;
