@@ -31,7 +31,7 @@ std::vector<std::string> Starter::interpret(std::vector<std::string> parsed) {
     if (leader == "COMPANY") {
 //        return CompanyActionHandler.HandleAction(action);
     } else if (leader == "TRADER") {
-        return TraderActionHandler.HandleAction(action);
+        return TraderActionHandler::HandleAction(action);
     } else if (leader == "ORDER") {
 //        return OrderActionHandler.HandleAction(action);
     } else {
@@ -58,7 +58,7 @@ std::vector<std::string> Starter::interpret(std::vector<std::string> parsed) {
   return {};
 }
 
-void Starter::startSession() {
+void Starter::StartSession() {
   std::string s;
   while (true) {
     std::getline(std::cin, s);

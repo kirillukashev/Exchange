@@ -1,16 +1,24 @@
-//
-// Created by User on 26.03.2023.
-//
+#pragma once
 
-#ifndef EXCHANGE_TRANSACTION_H
-#define EXCHANGE_TRANSACTION_H
+#include <iostream>
+#include <string>
+#include "Order.h"
+#include "Trader/Trader.h"
 
+class Transaction : public Order {
+ public:
+  Transaction();
+  Transaction(Order order, Trader seller, Trader buyer);
 
+  Trader GetSeller();
+  void SetSeller(Trader seller);
+  Trader GetBuyer();
+  void SetBuyer(Trader buyer);
+  std::string ToString();
+  bool execute();
 
-class Transaction {
-
+ private:
+  Trader buyer_;
+  Trader seller_;
 };
 
-
-
-#endif //EXCHANGE_TRANSACTION_H

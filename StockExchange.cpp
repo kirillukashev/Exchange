@@ -43,7 +43,7 @@ Trader* StockExchange::GetTrader(long id)  {
   return nullptr;
 }
 
-std::vector<Company> StockExchange::getCompanies() {
+std::vector<Company> StockExchange::GetCompanies() {
   return companies_;
 }
 

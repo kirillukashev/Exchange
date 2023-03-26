@@ -22,7 +22,7 @@ class Order {
   double GetRate();
   void SetRate(double rate);
   std::string ToString();
- private:
+ protected:
   Trader trader_;
   Stock stock_;
   Type type_;

@@ -11,5 +11,5 @@ class Starter {
 
  public:
   static std::vector<std::string> interpret(std::vector<std::string> parsed);
-  static void startSession();
+  static void StartSession();
 };

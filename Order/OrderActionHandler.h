@@ -1,14 +1,12 @@
-//
-// Created by User on 26.03.2023.
-//
+#pragma once
 
-#ifndef EXCHANGE_ORDERACTIONHANDLER_H
-#define EXCHANGE_ORDERACTIONHANDLER_H
+#include<iostream>
+#include <string>
+#include <vector>
+#include "ActionHandler.h"
+#include "../Actions/ActionType.h"
+#include "../Actions/Action.h"
 
-
-class OrderActionHandler {
-
+class OrderActionHandler : public ActionHandler {
+  std::vector<std::string> HandleAction(Action action);
 };
-
-
-#endif //EXCHANGE_ORDERACTIONHANDLER_H
