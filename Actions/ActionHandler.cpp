@@ -1,6 +1,6 @@
 #include "ActionHandler.h"
 
-std::string ActionHandler::getActionString(ActionType action) {
+std::string ActionHandler::GetActionString(ActionType action) {
   switch (action) {
     case SHOW:
       return "SHOW";
@@ -17,7 +17,7 @@ std::string ActionHandler::getActionString(ActionType action) {
   }
 }
 
-ActionType ActionHandler::getActionType(std::string actionString) {
+ActionType ActionHandler::GetActionType(std::string actionString) {
   std::string s;
   std::transform(actionString.begin(), actionString.end(), s.begin(), ::toupper);
   if (s.length() > 0) {

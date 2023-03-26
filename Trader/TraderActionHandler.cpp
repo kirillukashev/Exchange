@@ -1,10 +1,10 @@
 #include "TraderActionHandler.h"
 
-std::vector<std::string> TraderActionHandler::HandleAction(Action action) {
+std::vector<std::string> TraderActionHandler::HandleAction(const Action& action) {
   std::vector<std::string> return_ans;
-  std::vector<std::string> arguments = action.arguments_;
+  std::vector<std::string> arguments = action.arguments;
 
-  switch (action.action_type_) {
+  switch (action.action_type) {
     case SHOW:
       if (arguments.size() == 1) {
         long id = std::stol(arguments[0]);
@@ -41,11 +41,8 @@ std::vector<std::string> TraderActionHandler::HandleAction(Action action) {
             for (int i = 2; i < arguments.size(); i += 2) {
               std::transform(arguments[i].begin(), arguments[i].end(), arguments[i].begin(), ::toupper);
               Company* c = context.GetCompany(arguments[i]);
-              bool temp = t.PutHolding(context.GetCompany(arguments[i]).GetStock(), std::stoi(arguments[i + 1]));
-              if (temp) {
-                continue;
-              }
-              return_ans.push_back("Failed to add holding {" + arguments[i] + ": " + arguments[i + 1] + "}");
+              t.PutHolding(context.GetCompany(arguments[i])->GetStock(), std::stoi(arguments[i + 1]));
+//              return_ans.push_back("Failed to add holding {" + arguments[i] + ": " + arguments[i + 1] + "}");
             }
 
             if (context.addTrader(t)) {
@@ -66,7 +63,7 @@ std::vector<std::string> TraderActionHandler::HandleAction(Action action) {
         Trader *t = context.GetTrader(std::stol(id_str));
         if (t != nullptr) {
           if (context.DeleteTrader(t)) {
-//              return_ans.push_back("Deleted " + t.ToString());
+              return_ans.push_back("Deleted " + t->ToString());
           } else {
             return_ans.push_back("Failed to delete trader " + id_str);
           }
