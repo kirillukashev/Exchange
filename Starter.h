@@ -7,9 +7,9 @@
 
 class Starter {
  private:
-  static std::vector<std::string> Split(const std::string& s, std::vector<std::string>& elems);
+  static std::vector<std::string> split(const std::string& s, std::vector<std::string>& elems);
 
  public:
-  static std::vector<std::string> Interpret(std::vector<std::string> parsed);
+  static std::vector<std::string> interpret(std::vector<std::string> parsed);
   static void StartSession();
 };

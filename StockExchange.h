@@ -14,7 +14,7 @@ class StockExchange {
   StockExchange() = default;
   StockExchange(std::string name);
 
-  std::vector<Company> getCompanies();
+  std::vector<Company> GetCompanies();
   Company* GetCompany(std::string ticker);
   std::vector<Company> GetCompaniesByCategory(std::string s);
   bool AddCompany(Company c);

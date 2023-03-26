@@ -22,7 +22,7 @@
     std::cin >> control;
     switch (control) {
       case 1:
-        Starter::startSession();
+        Starter::StartSession();
         break;
       case 2:
         break;

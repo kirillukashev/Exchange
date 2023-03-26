@@ -1,5 +1,8 @@
-//
-// Created by User on 26.03.2023.
-//
-
 #include "OrderActionHandler.h"
+
+std::vector<std::string> OrderActionHandler::HandleAction(Action action) {
+  std::vector<std::string> return_ans;
+  std::vector<std::string> arguments = action.arguments_;
+  //TODO
+  return return_ans;
+}
