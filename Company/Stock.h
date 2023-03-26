@@ -20,6 +20,7 @@ class Stock {
   double GetHighPrice();
   void SetHighPrice(double high_price);
   std::string ToString();
+  int HashCode();
  private:
   std::string ticker_;
   double open_price_;

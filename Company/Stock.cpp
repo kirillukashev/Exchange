@@ -51,6 +51,16 @@ void Stock::SetHighPrice(double high_price) {
   this->high_price_ = high_price;
 }
 
+int Stock::HashCode() {
+  long long p = 31;
+  long long mod = 1e9 + 7;
+  long long hash = 0;
+  std::string s = this->GetTicker();
+  for(int i = 0; i < s.size(); ++i){
+    hash = (hash * p % mod + (s[i] - 'A' + 1)) % mod;
+  }
+  return hash;
+}
 std::string Stock::ToString() {
   std::string str_open_price = std::to_string(GetOpenPrice());
   std::string str_close_price = std::to_string(GetClosePrice());
