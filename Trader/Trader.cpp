@@ -42,6 +42,8 @@ void Trader::SetCurrency(double currency) {
   this->currency_ = currency;
 }
 
+Trader::Trader() {}
+
 Trader::Trader(std::string name, double currency, std::unordered_map<Stock, int> holdings) :
                name_(name), currency_(currency), holdings_(holdings), id_(count++) {}
 
