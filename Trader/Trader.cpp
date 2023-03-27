@@ -12,7 +12,7 @@ void Trader::PutHolding(Stock s, int q) {
   holdings_[s.HashCode()] = {s, q};
 }
 
-std::string Trader::toStringHoldings() {
+std::string Trader::ToStringHoldings() {
   if (holdings_.size() == 0) {
     return "{}";
   }
