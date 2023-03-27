@@ -33,7 +33,7 @@ std::string Transaction::ToString() {
   std::string str_quantity = std::to_string(GetQuantity());
   std::string str_rate = std::to_string(GetRate());
   return "Transaction{seller_id=" + str_seller_id + ", seller_name='" + GetSeller().GetName() + "', buyer_id="
-  + str_buyer_id + ", buyer_name='" + GetBuyer().GetName() + "', stock='" + this->stock_.GetTicker()
+  + str_buyer_id + ", buyer_name='" + GetBuyer().GetName() + "', stock='" + GetStock().GetTicker()
   + "', quantity=" + str_quantity+ ", rate=" + str_rate + "}";
 }
 

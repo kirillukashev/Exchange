@@ -22,6 +22,7 @@ class Trader {
   int GetHolding(Stock s);
   void SetHoldings(std::unordered_map<int, std::pair<Stock, int>> holdings);
   void PutHolding(Stock s, int q);
+  double PutCurrency(double currency);
   std::string ToStringHoldings();
   std::string ToString();
  private:
