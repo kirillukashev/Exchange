@@ -4,8 +4,9 @@ std::string Trader::ToString() {
   std::string return_ans = "Trader{id = " + std::to_string(id_) +
                            ", name = " + name_ +
                            ", currency = " + std::to_string(currency_) +
-                           ", holdings = " + toStringHoldings() +
+                           ", holdings = " + ToStringHoldings() +
                            '}';
+  return return_ans;
 }
 
 void Trader::PutHolding(Stock s, int q) {
@@ -45,9 +46,9 @@ void Trader::SetCurrency(double currency) {
 Trader::Trader() {}
 
 Trader::Trader(std::string name, double currency, std::unordered_map<int, std::pair<Stock, int>> holdings) :
-        name_(name), currency_(currency), holdings_(holdings), id_(count++) {}
+        name_(name), currency_(currency), holdings_(holdings), id_(++count) {}
 
-Trader::Trader(std::string name, double currency) : name_(name), currency_(currency), id_(count++) {}
+Trader::Trader(std::string name, double currency) : name_(name), currency_(currency), id_(++count), holdings_({}) {}
 
 long Trader::GetId() {
   return id_;
