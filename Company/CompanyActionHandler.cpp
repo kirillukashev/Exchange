@@ -78,6 +78,7 @@ std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
     default:
       return_ans.push_back("Usage:");
       return_ans.push_back("  COMPANY SHOW ticker?");
+      return_ans.push_back("  COMPANY SHOW_CATEGORIES");
       return_ans.push_back("  COMPANY SHOW_CATEGORY category?");
       return_ans.push_back("  COMPANY ADD name? ticker? category? open_price? close_price? low_price? high_price?");
       return_ans.push_back("  COMPANY DELETE ticker?");

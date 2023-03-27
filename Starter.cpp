@@ -55,6 +55,8 @@ std::vector<std::string> Starter::Interpret(StockExchange se, std::vector<std::s
           "Usage:",
           "  COMPANY:",
           "    COMPANY SHOW ticker?",
+          "    COMPANY SHOW_CATEGORIES",
+          "    COMPANY SHOW_CATEGORY category?",
           "    COMPANY ADD name? ticker? category? open_price? close_price? low_price? high_price?",
           "    COMPANY DELETE ticker?",
           "  TRADER:",
