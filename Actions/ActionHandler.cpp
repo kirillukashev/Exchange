@@ -4,6 +4,10 @@ std::string ActionHandler::GetActionString(ActionType action) {
   switch (action) {
     case SHOW:
       return "SHOW";
+    case SHOW_CATEGORY:
+      return "SHOW_CATEGORY";
+    case SHOW_CATEGORIES:
+      return "SHOW_CATEGORIES";
     case ADD:
       return "ADD";
     case DELETE:
@@ -18,22 +22,27 @@ std::string ActionHandler::GetActionString(ActionType action) {
 }
 
 ActionType ActionHandler::GetActionType(std::string actionString) {
-  std::string s;
-  std::transform(actionString.begin(), actionString.end(), s.begin(), ::toupper);
-  if (s.length() > 0) {
-    if (s == "SHOW") {
+  std::transform(actionString.begin(), actionString.end(), actionString.begin(), ::toupper);
+  if (!actionString.empty()) {
+    if (actionString == "SHOW") {
       return ActionType::SHOW;
     }
-    if (s == "ADD") {
+    if (actionString == "SHOW_CATEGORY") {
+      return ActionType::SHOW_CATEGORY;
+    }
+    if (actionString == "SHOW_CATEGORIES") {
+      return ActionType::SHOW_CATEGORIES;
+    }
+    if (actionString == "ADD") {
       return ActionType::ADD;
     }
-    if (s == "DELETE") {
+    if (actionString == "DELETE") {
       return ActionType::DELETE;
     }
-    if (s == "STAGE") {
+    if (actionString == "STAGE") {
       return ActionType::STAGE;
     }
-    if (s == "EXECUTE_ALL") {
+    if (actionString == "EXECUTE_ALL") {
       return ActionType::EXECUTE_ALL;
     }
   }

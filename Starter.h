@@ -14,7 +14,7 @@ class Starter {
   void StartSession(StockExchange se);
 
  private:
-  std::vector<std::string> Split(const std::string& s, std::vector<std::string>& elems);
+  void Split(const std::string& s, std::vector<std::string>& elems);
   StockExchange context_;
   CompanyActionHandler company_action_handler_;
   TraderActionHandler trader_action_handler_;

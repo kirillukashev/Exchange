@@ -11,6 +11,7 @@ class Stock {
 
   std::string GetTicker();
   void SetTicker(std::string ticker);
+
   double GetOpenPrice();
   void SetOpenPrice(double open_price);
   double GetClosePrice();

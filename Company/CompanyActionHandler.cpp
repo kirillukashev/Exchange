@@ -10,15 +10,18 @@ std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
     case SHOW:
       if (arguments.size() == 1) {
         std::string ticker = arguments[0];
-        Company *c = context.GetCompany(ticker);
-        if (c != nullptr) {
-          return_ans.push_back(c->ToString());
+        int ind = context.GetCompanyInd(ticker);
+        if (ind != -1) {
+          return_ans.push_back(context.GetCompanyInf(ind));
         } else {
           return_ans.push_back("Company with ticker " + ticker + " isn't registered");
         }
       } else {
         return_ans.push_back("Usage: COMPANY SHOW ticker?");
       }
+      break;
+    case SHOW_CATEGORIES:
+      return_ans = {"COMPANY CATEGORIES:", "ENERGY", "MATERIALS", "INDUSTRY", "FINANCE", "IT"};
       break;
     case SHOW_CATEGORY:
       if (arguments.size() == 1) {
@@ -52,21 +55,22 @@ std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
         }
         return_ans.push_back("Failed to add company '" + ticker + "'");
       }
-      return_ans.push_back("Usage: COMPANY ADD name? ticker? open_price? close_price? low_price? high_price?");
+      return_ans.push_back("Usage: COMPANY ADD name? ticker? category? open_price? close_price? low_price? high_price?");
       break;
     case DELETE:
       if (arguments.size() == 1) {
         std::string ticker = arguments[0];
-        Company *c = context.GetCompany(ticker);
-        if (c != nullptr) {
-          if (context.DeleteCompany(c)) {
-            return_ans.push_back("Deleted " + c->ToString());
-          } else {
-            return_ans.push_back("Failed to delete company '" + ticker + "'");
-          }
-        } else {
-          return_ans.push_back("Company with id " + ticker + " isn't registered with " + context.GetName());
-        }
+//        Company *c = context.GetCompany(ticker);
+//        if (c != nullptr) {
+//          if (context.DeleteCompany(c)) {
+//            return_ans.push_back("Deleted " + c->ToString());
+//          } else {
+//            return_ans.push_back("Failed to delete company '" + ticker + "'");
+//          }
+//        } else {
+//          return_ans.push_back("Company with id " + ticker + " isn't registered with " + context.GetName());
+//        }
+        return_ans.push_back(context.DeleteCompany(ticker));
       } else {
         return_ans.push_back("Usage: COMPANY DELETE id?");
       }

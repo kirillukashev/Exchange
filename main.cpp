@@ -24,7 +24,7 @@ int main() {
     switch (control) {
       case 1:
         std::cout << "\n" << se.GetName() << " INTERPRETER\n";
-        std::cout << "Type 'help' to check usages\n";
+        std::cout << "Type 'help' to check usages\n\n";
         starter.StartSession(se);
         break;
       case 2:

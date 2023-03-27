@@ -6,57 +6,70 @@ StockExchange::StockExchange(std::string name) {
 }
 
 bool StockExchange::AddTrader(Trader t) {
-  std::cout << GetTrader(t.GetId()) << "\n";
-  if (GetTrader(t.GetId()) == nullptr) {
+  if (GetTraderInd(t.GetId()) == -1) {
     traders_.push_back(t);
     return true;
   }
   return false;
 }
 
-bool StockExchange::DeleteTrader(long id) {
-  Trader* t = GetTrader(id);
-  if (t != nullptr) {
-    return DeleteTrader(t);
+std::string StockExchange::DeleteTrader(long id) {
+  int ind = GetTraderInd(id);
+  if (ind != -1) {
+    return DeleteTrader(ind);
   }
-  return false;
+  return ("Trader with id " + std::to_string(id) + " isn't registered with " + GetName());
 }
 
-bool StockExchange::DeleteTrader(Trader* t) {
+std::string StockExchange::DeleteTrader(int i) {
   for (std::vector<Trader>::iterator it = traders_.begin(); it != traders_.end(); ++it) {
-    if (it->GetId() == t->GetId()) {
+    if (it->GetId() == traders_[i].GetId()) {
+      std::string ans = ("Deleted " + traders_[i].ToString());
       traders_.erase(it);
-      return true;
+      return ans;
     }
   }
-  return false;
+  return ("Failed to delete trader " + std::to_string(traders_[i].GetId()));
 }
 
 std::string StockExchange::GetName() {
   return name_;
 }
 
-Trader* StockExchange::GetTrader(long id)  {
+std::string StockExchange::CheckTrader(long id) {
   for (Trader t : traders_) {
     if (t.GetId() == id) {
-      return &t;
+      return t.ToString();
     }
   }
-  return nullptr;
+  return ("Trader with id " + std::to_string(id) + " isn't registered");
+}
+
+int StockExchange::GetTraderInd(long id)  {
+  for (int i = 0; i < traders_.size(); ++i) {
+    if (traders_[i].GetId() == id) {
+      return i;
+    }
+  }
+  return -1;
 }
 
 std::vector<Company> StockExchange::GetCompanies() {
   return companies_;
 }
 
-Company* StockExchange::GetCompany(std::string ticker) {
+int StockExchange::GetCompanyInd(std::string ticker) {
   std::transform(ticker.begin(), ticker.end(), ticker.begin(), ::toupper);
-  for (Company c : companies_) {
-    if (c.GetStock().GetTicker() == ticker) {
-      return &c;
+  for (int i = 0; i < companies_.size(); ++i) {
+    if (companies_[i].GetStock().GetTicker() == ticker) {
+      return i;
     }
   }
-  return nullptr;
+  return -1;
+}
+
+std::string StockExchange::GetCompanyInf(int ind) {
+  return companies_[ind].ToString();
 }
 
 std::vector<Company> StockExchange::GetCompaniesByCategory(std::string ticker) {
@@ -70,29 +83,21 @@ std::vector<Company> StockExchange::GetCompaniesByCategory(std::string ticker) {
 }
 
 bool StockExchange::AddCompany(Company c) {
-  if (GetCompany(c.GetStock().GetTicker()) == nullptr) {
+  if (GetCompanyInd(c.GetStock().GetTicker()) == -1) {
     this->companies_.push_back(c);
     return true;
   }
   return false;
 }
 
-bool StockExchange::DeleteCompany(Company* c) {
-  for (int x = 0; x < companies_.size(); ++x) {
-    if (companies_[x].GetName() == c->GetName()) {
-      companies_.erase(companies_.begin() + x);
-      return true;
-    }
+std::string StockExchange::DeleteCompany(std::string ticker) {
+  int ind = GetCompanyInd(ticker);
+  if (ind != -1) {
+    std::string ans = ("Deleted " + companies_[ind].ToString());
+    companies_.erase(companies_.begin() + ind);
+    return ans;
   }
-  return false;
-}
-
-bool StockExchange::DeleteCompany(std::string ticker) {
-  Company* c = GetCompany(ticker);
-  if (c != nullptr) {
-    return DeleteCompany(c);
-  }
-  return false;
+  return ("Company with id " + ticker + " isn't registered with " + GetName());
 }
 
 template<typename T>
