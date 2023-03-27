@@ -1,9 +1,7 @@
 #include "TraderActionHandler.h"
 
-TraderActionHandler::TraderActionHandler(StockExchange se) {
-  context = se;
-  action_leader = "TRADER";
-}
+TraderActionHandler::TraderActionHandler(StockExchange se) :
+        ActionHandler(se, "TRADER") {}
 
 std::vector<std::string> TraderActionHandler::HandleAction(const Action& action) {
   std::vector<std::string> return_ans;

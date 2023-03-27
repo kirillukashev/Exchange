@@ -1,9 +1,7 @@
 #include "CompanyActionHandler.h"
 
-CompanyActionHandler::CompanyActionHandler(StockExchange se) {
-  context = se;
-  action_leader = "COMPANY";
-}
+CompanyActionHandler::CompanyActionHandler(StockExchange se) :
+      ActionHandler(se, "COMPANY") {}
 
 std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
   std::vector<std::string> return_ans;
@@ -12,7 +10,7 @@ std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
     case SHOW:
       if (arguments.size() == 1) {
         std::string ticker = arguments[0];
-        Company* c = context.GetCompany(ticker);
+        Company *c = context.GetCompany(ticker);
         if (c != nullptr) {
           return_ans.push_back(c->ToString());
         } else {
