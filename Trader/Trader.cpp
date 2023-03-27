@@ -68,3 +68,12 @@ void Trader::SetName(std::string name) {
 double Trader::GetCurrency() {
   return currency_;
 }
+
+double Trader::PutCurrency(double currency) {
+  if (GetCurrency() + currency < 0.0) {
+    return 0.0;
+  } else {
+    SetCurrency(GetCurrency() + currency);
+    return currency;
+  }
+}
