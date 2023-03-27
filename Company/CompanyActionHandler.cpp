@@ -1,13 +1,16 @@
 #include "CompanyActionHandler.h"
 
+CompanyActionHandler::CompanyActionHandler(StockExchange se) :
+      ActionHandler(se, "COMPANY") {}
+
 std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
   std::vector<std::string> return_ans;
-  std::vector<std::string> arguments = action.arguments_;
-  switch (action.action_type_) {
+  std::vector<std::string> arguments = action.arguments;
+  switch (action.action_type) {
     case SHOW:
       if (arguments.size() == 1) {
         std::string ticker = arguments[0];
-        Company* c = context.GetCompany(ticker);
+        Company *c = context.GetCompany(ticker);
         if (c != nullptr) {
           return_ans.push_back(c->ToString());
         } else {

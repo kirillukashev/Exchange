@@ -1,5 +1,8 @@
 #include "TraderActionHandler.h"
 
+TraderActionHandler::TraderActionHandler(StockExchange se) :
+        ActionHandler(se, "TRADER") {}
+
 std::vector<std::string> TraderActionHandler::HandleAction(const Action& action) {
   std::vector<std::string> return_ans;
   std::vector<std::string> arguments = action.arguments;
@@ -25,7 +28,7 @@ std::vector<std::string> TraderActionHandler::HandleAction(const Action& action)
         double currency = std::stod(arguments[1]);
         Trader t = Trader(name, currency);
 
-        if (context.addTrader(t)) {
+        if (context.AddTrader(t)) {
             return_ans.push_back("Added " + t.ToString());
           break;
         } else {
@@ -45,7 +48,7 @@ std::vector<std::string> TraderActionHandler::HandleAction(const Action& action)
 //              return_ans.push_back("Failed to add holding {" + arguments[i] + ": " + arguments[i + 1] + "}");
             }
 
-            if (context.addTrader(t)) {
+            if (context.AddTrader(t)) {
               return_ans.push_back("Added " + t.ToString());
               break;
             } else {

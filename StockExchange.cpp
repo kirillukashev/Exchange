@@ -1,10 +1,12 @@
 #include "StockExchange.h"
 
 StockExchange::StockExchange(std::string name) {
-std::transform(name.begin(), name.end(), this->name_.begin(), ::toupper);
+  std::transform(name.begin(), name.end(), name.begin(), ::toupper);
+  this->name_ = name;
 }
 
-bool StockExchange::addTrader(Trader t) {
+bool StockExchange::AddTrader(Trader t) {
+  std::cout << GetTrader(t.GetId()) << "\n";
   if (GetTrader(t.GetId()) == nullptr) {
     traders_.push_back(t);
     return true;

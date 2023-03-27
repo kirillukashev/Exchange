@@ -10,5 +10,7 @@
 
 class TraderActionHandler : public ActionHandler {
  public:
+  TraderActionHandler() = default;
+  TraderActionHandler(StockExchange se);
   static std::vector<std::string> HandleAction(const Action& action);
 };

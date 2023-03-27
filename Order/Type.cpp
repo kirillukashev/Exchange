@@ -23,7 +23,7 @@ OrderType Type::GetTypeFromString(std::string type) {
     } else if (type == "TRANSACTION") {
       return OrderType::TRANSACTION;
     } else {
-      return OrderType::NULL0;
+      return OrderType::NULL1;
     }
   }
 }

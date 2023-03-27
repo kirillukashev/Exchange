@@ -4,5 +4,5 @@ enum OrderType {
   BUY,
   SELL,
   TRANSACTION,
-  NULL0
+  NULL1
 };
