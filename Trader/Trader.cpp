@@ -4,12 +4,12 @@ std::string Trader::ToString() {
   std::string return_ans = "Trader{id = " + std::to_string(id_) +
                            ", name = " + name_ +
                            ", currency = " + std::to_string(currency_) +
-                           ", holdings = " + toStringHoldings()  +
+                           ", holdings = " + toStringHoldings() +
                            '}';
 }
 
 void Trader::PutHolding(Stock s, int q) {
-  holdings_.insert_or_assign(s, (holdings_[s] + q));
+  holdings_[s.HashCode()] = {s, q};
 }
 
 std::string Trader::toStringHoldings() {
@@ -18,23 +18,23 @@ std::string Trader::toStringHoldings() {
   }
   std::string return_str = "{";
   for (auto it = holdings_.begin(); it != holdings_.end(); ++it) {
-    Stock s = it -> first;
-    return_str += "{stock = " + s.GetTicker() + ", quantity = " + std::to_string(holdings_[s]) + "}, ";
+    Stock s = (it->second).first;
+    return_str += "{stock = " + s.GetTicker() + ", quantity = " + std::to_string(holdings_[s.HashCode()].second) + "}, ";
   }
   return_str = return_str.substr(0, return_str.size() - 1);
   return_str += "}";
   return return_str;
 }
 
-std::unordered_map<Stock, int> Trader::GetHoldings() {
+std::unordered_map<int, std::pair<Stock, int>> Trader::GetHoldings() {
   return holdings_;
 }
 
 int Trader::GetHolding(Stock s) {
-  return holdings_[s];
+  return holdings_[s.HashCode()].second;
 }
 
-void Trader::SetHoldings(std::unordered_map<Stock, int> holdings) {
+void Trader::SetHoldings(std::unordered_map<int, std::pair<Stock, int>> holdings) {
   this->holdings_ = holdings;
 }
 
@@ -44,8 +44,8 @@ void Trader::SetCurrency(double currency) {
 
 Trader::Trader() {}
 
-Trader::Trader(std::string name, double currency, std::unordered_map<Stock, int> holdings) :
-               name_(name), currency_(currency), holdings_(holdings), id_(count++) {}
+Trader::Trader(std::string name, double currency, std::unordered_map<int, std::pair<Stock, int>> holdings) :
+        name_(name), currency_(currency), holdings_(holdings), id_(count++) {}
 
 Trader::Trader(std::string name, double currency) : name_(name), currency_(currency), id_(count++) {}
 

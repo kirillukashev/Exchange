@@ -1,4 +1,5 @@
 #include "Starter.h"
+#include "CompanyActionHandler.h"
 
 std::vector<std::string> Starter::Split(const std::string& s, std::vector<std::string>& elems) {
   std::stringstream ss(s);
@@ -9,7 +10,7 @@ std::vector<std::string> Starter::Split(const std::string& s, std::vector<std::s
   return elems;
 }
 
-std::vector<std::string> Starter::Interpret(std::vector<std::string> parsed) {
+std::vector<std::string> Starter::Interpret(StockExchange se, std::vector<std::string> parsed) {
   if (!parsed.empty()) {
     for (auto & i : parsed) {
       std::transform(i.begin(), i.end(), i.begin(), ::toupper);
@@ -29,9 +30,9 @@ std::vector<std::string> Starter::Interpret(std::vector<std::string> parsed) {
       Action action = Action(actionTypeString, arguments);
 
     if (leader == "COMPANY") {
-//        return CompanyActionHandler.HandleAction(action);
+        return CompanyActionHandler::HandleAction(se, action);
     } else if (leader == "TRADER") {
-        return TraderActionHandler::HandleAction(action);
+        return TraderActionHandler::HandleAction(se, action);
     } else if (leader == "ORDER") {
 //        return OrderActionHandler.HandleAction(action);
     } else {
@@ -39,16 +40,13 @@ std::vector<std::string> Starter::Interpret(std::vector<std::string> parsed) {
               "Usage:",
               "  COMPANY:",
               "    COMPANY SHOW ticker?",
-              "    COMPANY SHOW_ALL",
               "    COMPANY ADD name? ticker? open_price? close_price? low_price? high_price?",
               "    COMPANY DELETE ticker?",
               "  TRADER:",
               "    TRADER SHOW id?",
-              "    TRADER SHOW_ALL",
               "    TRADER ADD name? currency? holdings(format:\"{ticker:quantity, ticker2:quantity2}\")?",
               "    TRADER DELETE id?",
               "  ORDER:",
-              "    ORDER SHOW_ALL",
               "    ORDER EXECUTE_ALL",
               "    ORDER STAGE trader_id? stock_ticker? type(BUY/SELL)? quantity? rate?",
               "  EXIT (only in interpreter mode)"
@@ -58,7 +56,7 @@ std::vector<std::string> Starter::Interpret(std::vector<std::string> parsed) {
   return {};
 }
 
-void Starter::StartSession() {
+void Starter::StartSession(StockExchange se) {
   std::string s;
   while (true) {
     std::getline(std::cin, s);
@@ -70,9 +68,9 @@ void Starter::StartSession() {
                                || parsed[0] == "Q")) {
       return;
     }
-    std::vector<std::string> interpreted = Interpret(parsed);
+    std::vector<std::string> interpreted = Interpret(se, parsed);
     for (const std::string& i : interpreted) {
-      std::cout << i;
+      std::cout << i << "\n";
     }
   }
 }

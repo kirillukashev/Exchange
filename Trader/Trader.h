@@ -9,7 +9,7 @@ static int count = 0;
 class Trader {
  public:
   Trader();
-  Trader(std::string name, double currency, std::unordered_map<Stock, int> holdings);
+  Trader(std::string name, double currency, std::unordered_map<int, std::pair<Stock, int>>);
   Trader(std::string name, double currency);
 
   long GetId();
@@ -18,9 +18,9 @@ class Trader {
   void SetName(std::string name);
   double GetCurrency();
   void SetCurrency(double currency);
-  std::unordered_map<Stock, int> GetHoldings();
+  std::unordered_map<int, std::pair<Stock, int>> GetHoldings();
   int GetHolding(Stock s);
-  void SetHoldings(std::unordered_map<Stock, int> holdings);
+  void SetHoldings(std::unordered_map<int, std::pair<Stock, int>> holdings);
   void PutHolding(Stock s, int q);
   std::string toStringHoldings();
   std::string ToString();
@@ -28,5 +28,5 @@ class Trader {
   long id_;
   std::string name_;
   double currency_;
-  std::unordered_map<Stock, int> holdings_; // stock, count
+  std::unordered_map<int, std::pair<Stock, int>> holdings_; // stock, count
 };

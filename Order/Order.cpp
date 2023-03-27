@@ -51,6 +51,7 @@ double Order::GetRate() {
 void Order::SetRate(double rate) {
   this->rate_ = rate;
 }
+
 std::string Order::ToString() {
   std::string str_trader_id = std::to_string(GetTrader().GetId());
   std::string str_quantity = std::to_string(GetQuantity());

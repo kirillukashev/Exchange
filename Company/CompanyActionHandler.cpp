@@ -1,9 +1,9 @@
 #include "CompanyActionHandler.h"
 
-std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
+std::vector<std::string> CompanyActionHandler::HandleAction(StockExchange context, Action action) {
   std::vector<std::string> return_ans;
-  std::vector<std::string> arguments = action.arguments_;
-  switch (action.action_type_) {
+  std::vector<std::string> arguments = action.arguments;
+  switch (action.action_type) {
     case SHOW:
       if (arguments.size() == 1) {
         std::string ticker = arguments[0];

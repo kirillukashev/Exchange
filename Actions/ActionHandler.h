@@ -7,8 +7,9 @@
 
 class ActionHandler {
  public:
-  static StockExchange context; // Trouble with static?
+  std::string action_leader;
 
+  ActionHandler(StockExchange cont, std::string lead);
   static std::string GetActionString(ActionType action);
   static ActionType GetActionType(std::string actionString);
 };

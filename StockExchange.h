@@ -6,6 +6,7 @@
 #include <string>
 #include "Trader/Trader.h"
 #include "Company/Company.h"
+#include "Order/Order.h"
 
 
 
@@ -21,7 +22,7 @@ class StockExchange {
   bool DeleteCompany(Company* c);
   bool DeleteCompany(std::string ticker);
   Trader* GetTrader(long id);
-  bool addTrader(Trader t);
+  bool AddTrader(Trader t);
   bool DeleteTrader(Trader *t);
   bool DeleteTrader(long id);
   std::string ToString();
@@ -32,5 +33,5 @@ class StockExchange {
   std::string name_;
   std::vector<Company> companies_;
   std::vector<Trader> traders_;
-//  std::vector<Order> orders_;
+  std::vector<Order> orders_;
 };

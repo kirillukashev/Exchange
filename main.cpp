@@ -3,7 +3,7 @@
 #include "Starter.h"
 #include <Stock.h>
 
-/*int main() {
+int main() {
   std::cout << "Please, enter name of Stock Exchange: \n>> ";
   std::string stock_exchange_name;
   std::cin >> stock_exchange_name;
@@ -12,7 +12,7 @@
 
   int control;
   do {
-    std::cout << se.getName() + " (STOCK EXCHANGE SERVICES)\n";
+    std::cout << se.GetName() + " (STOCK EXCHANGE SERVICES)\n";
     std::cout << "Please choose: \n";
     std::cout << "1. Start Interpreter\n";
     std::cout << "2. Load Input File\n";
@@ -22,7 +22,7 @@
     std::cin >> control;
     switch (control) {
       case 1:
-        Starter::StartSession();
+        Starter::StartSession(se);
         break;
       case 2:
         break;
@@ -35,4 +35,4 @@
     }
   } while (control != 4);
   return 0;
-}*/
+}

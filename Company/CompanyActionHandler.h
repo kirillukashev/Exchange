@@ -8,5 +8,6 @@
 #include "Company.h"
 
 class CompanyActionHandler : public ActionHandler {
-  std::vector<std::string> HandleAction(Action action);
+ public:
+  static std::vector<std::string> HandleAction(StockExchange context, Action action);
 };

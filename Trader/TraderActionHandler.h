@@ -10,5 +10,5 @@
 
 class TraderActionHandler : public ActionHandler {
  public:
-  static std::vector<std::string> HandleAction(const Action& action);
+  static std::vector<std::string> HandleAction(StockExchange context, const Action& action);
 };
