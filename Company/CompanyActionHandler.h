@@ -9,5 +9,7 @@
 
 class CompanyActionHandler : public ActionHandler {
  public:
-  static std::vector<std::string> HandleAction(StockExchange context, Action action);
+  CompanyActionHandler() = default;
+  CompanyActionHandler(StockExchange se);
+  std::vector<std::string> HandleAction(Action action);
 };

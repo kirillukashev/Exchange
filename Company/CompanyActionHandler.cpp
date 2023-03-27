@@ -1,6 +1,11 @@
 #include "CompanyActionHandler.h"
 
-std::vector<std::string> CompanyActionHandler::HandleAction(StockExchange context, Action action) {
+CompanyActionHandler::CompanyActionHandler(StockExchange se) {
+  context = se;
+  action_leader = "COMPANY";
+}
+
+std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
   std::vector<std::string> return_ans;
   std::vector<std::string> arguments = action.arguments;
   switch (action.action_type) {

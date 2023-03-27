@@ -8,5 +8,8 @@
 #include "../Actions/Action.h"
 
 class OrderActionHandler : public ActionHandler {
-  static std::vector<std::string> HandleAction(StockExchange context, Action action);
+ public:
+  OrderActionHandler() = default;
+  OrderActionHandler(StockExchange se);
+  std::vector<std::string> HandleAction(Action action);
 };

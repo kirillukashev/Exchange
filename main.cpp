@@ -20,9 +20,12 @@ int main() {
     std::cout << "4. Exit\n";
     std::cout << ">> ";
     std::cin >> control;
+    Starter starter = Starter(se);
     switch (control) {
       case 1:
-        Starter::StartSession(se);
+        std::cout << "\n" << se.GetName() << " INTERPRETER\n";
+        std::cout << "Type 'help' to check usages\n";
+        starter.StartSession(se);
         break;
       case 2:
         break;
@@ -32,6 +35,7 @@ int main() {
         break;
       default:
         std::cout << "\nPlease choose a valid option\n";
+        break;
     }
   } while (control != 4);
   return 0;

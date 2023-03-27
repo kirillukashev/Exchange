@@ -1,5 +1,4 @@
 #include "Starter.h"
-#include "CompanyActionHandler.h"
 
 std::vector<std::string> Starter::Split(const std::string& s, std::vector<std::string>& elems) {
   std::stringstream ss(s);
@@ -8,6 +7,13 @@ std::vector<std::string> Starter::Split(const std::string& s, std::vector<std::s
     elems.push_back(item);
   }
   return elems;
+}
+
+Starter::Starter(StockExchange se): context_(se) {
+  // registering action handlers
+  this->company_action_handler_ = CompanyActionHandler(se);
+  this->trader_action_handler_ = TraderActionHandler(se);
+  this->order_action_handler_ = OrderActionHandler(se);
 }
 
 std::vector<std::string> Starter::Interpret(StockExchange se, std::vector<std::string> parsed) {
@@ -30,11 +36,11 @@ std::vector<std::string> Starter::Interpret(StockExchange se, std::vector<std::s
       Action action = Action(actionTypeString, arguments);
 
     if (leader == "COMPANY") {
-        return CompanyActionHandler::HandleAction(se, action);
+        return company_action_handler_.HandleAction(action);
     } else if (leader == "TRADER") {
-        return TraderActionHandler::HandleAction(se, action);
+        return trader_action_handler_.HandleAction(action);
     } else if (leader == "ORDER") {
-//        return OrderActionHandler.HandleAction(action);
+//        return order_action_handler_.HandleAction(action);
     } else {
       return  std::vector<std::string>{
               "Usage:",
