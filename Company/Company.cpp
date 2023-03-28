@@ -2,12 +2,14 @@
 
 Company::Company() {}
 
-Company::Company(std::string name, std::string ticker, std::string category, double open_price, double close_price, double low_price, double high_price) {
+Company::Company(std::string name, std::string ticker, std::string category, double open_price, double close_price,
+                 double low_price, double high_price, int quantity_stock) {
   std::transform(name.begin(), name.end(), name.begin(), ::toupper);
   this->name_ = name;
   std::transform(category.begin(), category.end(), category.begin(), ::toupper);
   this->category_index_ = GetCategoryIndex(category);
   this->stock_ = Stock(ticker, open_price, close_price, low_price, high_price);
+  this->quantity_stock_ = quantity_stock;
 }
 
 int Company::GetCategoryIndex(std::string s) {
@@ -61,7 +63,15 @@ void Company::SetCategory(std::string category) {
   if (!f) throw std::invalid_argument("This category does not exist");
 }
 
+int Company::GetQuantity() {
+  return this->quantity_stock_;
+}
+
+void Company::SetQuantity(int quantity_stock) {
+  this->quantity_stock_ = quantity_stock;
+}
+
 std::string Company::ToString() {
-  return "Company{name = '" + GetName() + "', category = '" + GetCategory() +
-  "', stock = " + this->stock_.ToString();
+  return "Company{name = '" + GetName() + "', category = '" + GetCategory() + ", quantity_stock = " + std::to_string(GetQuantity())
+  + "', stock = " + this->stock_.ToString();
 }

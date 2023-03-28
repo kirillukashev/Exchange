@@ -14,11 +14,11 @@ class StockExchange {
   StockExchange(std::string name);
 
   std::vector<Company> GetCompanies();
-  int GetCompanyInd(std::string ticker);
+  Company GetCompanyByIndex(int index);
+  int GetCompanyIndex(std::string ticker);
   std::vector<Company> GetCompaniesByCategory(std::string s);
   bool AddCompany(Company c);
   std::string DeleteCompany(std::string ticker);
-  std::string GetCompanyInf(int ind);
   int GetTraderInd(long id);
   std::string CheckTrader(long id);
   bool AddTrader(Trader t);

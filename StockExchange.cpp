@@ -58,20 +58,18 @@ std::vector<Company> StockExchange::GetCompanies() {
   return companies_;
 }
 
-int StockExchange::GetCompanyInd(std::string ticker) {
-  bool f = 0;
+int StockExchange::GetCompanyIndex(std::string ticker) {
   std::transform(ticker.begin(), ticker.end(), ticker.begin(), ::toupper);
   for (int i = 0; i < companies_.size(); ++i) {
     if (companies_[i].GetStock().GetTicker() == ticker) {
-      f = 1;
       return i;
     }
   }
   return -1;
 }
 
-std::string StockExchange::GetCompanyInf(int ind) {
-  return companies_[ind].ToString();
+Company StockExchange::GetCompanyByIndex(int index) {
+  return companies_[index];
 }
 
 std::vector<Company> StockExchange::GetCompaniesByCategory(std::string ticker) {
@@ -85,7 +83,7 @@ std::vector<Company> StockExchange::GetCompaniesByCategory(std::string ticker) {
 }
 
 bool StockExchange::AddCompany(Company c) {
-  if (GetCompanyInd(c.GetStock().GetTicker()) == -1) {
+  if (GetCompanyIndex(c.GetStock().GetTicker()) == -1) {
     this->companies_.push_back(c);
     return true;
   }
@@ -93,7 +91,7 @@ bool StockExchange::AddCompany(Company c) {
 }
 
 std::string StockExchange::DeleteCompany(std::string ticker) {
-  int ind = GetCompanyInd(ticker);
+  int ind = GetCompanyIndex(ticker);
   if (ind != -1) {
     std::string ans = companies_[ind].ToString();
     companies_.erase(companies_.begin() + ind);

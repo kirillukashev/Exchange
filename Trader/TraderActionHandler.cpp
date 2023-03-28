@@ -30,6 +30,10 @@ std::vector<std::string> TraderActionHandler::HandleAction(const Action& action)
           return_ans.push_back("Failed to add trader '" + name + "'");
         }
       }
+      for (int x = 0; x < arguments.size(); ++x) {
+        std::cout << arguments[x] << ' ';
+      }
+      std::cout << '\n';
       if (arguments.size() >= 3) {
         std::string name = arguments[0];
         double currency = std::stod(arguments[1]);
@@ -37,7 +41,7 @@ std::vector<std::string> TraderActionHandler::HandleAction(const Action& action)
         std::string holdings_string;
         if (arguments.size() >= 4 && arguments.size() % 2 == 0) {
           for (int i = 2; i < arguments.size(); i += 2) {
-            //TODO
+            //t.PutHolding(context.GetCompanyInf(), std::stoi(arguments[i + 1]));
 //            std::transform(arguments[i].begin(), arguments[i].end(), arguments[i].begin(), ::toupper);
 //            Company* c = context.GetCompany(arguments[i]);
 //            t.PutHolding(context.GetCompany(arguments[i])->GetStock(), std::stoi(arguments[i + 1]));
