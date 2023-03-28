@@ -57,6 +57,9 @@ int StockExchange::GetTraderInd(long id)  {
   return -1;
 }
 
+Trader StockExchange::GetTraderByIndex(int index) {
+  return traders_[index];
+}
 std::vector<Company> StockExchange::GetCompanies() {
   return companies_;
 }
@@ -112,6 +115,10 @@ std::string StockExchange::ToString(std::vector<T> vector) {
   }
   ans += "}";
   return ans;
+}
+
+void StockExchange::AddOrder(Order o) {
+  orders_.push_back(o);
 }
 
 std::string StockExchange::ToString() {

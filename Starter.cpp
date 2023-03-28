@@ -48,7 +48,7 @@ std::vector<std::string> Starter::Interpret(std::vector<std::string> parsed) {
     } else if (leader == "TRADER") {
         return trader_action_handler_.HandleAction(action);
     } else if (leader == "ORDER") {
-//        return order_action_handler_.HandleAction(action);
+        return order_action_handler_.HandleAction(action);
     }
   }
   return  std::vector<std::string>{

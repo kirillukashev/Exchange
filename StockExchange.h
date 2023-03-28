@@ -20,12 +20,14 @@ class StockExchange {
   bool AddCompany(Company c);
   std::string DeleteCompany(std::string ticker);
   int GetTraderInd(long id);
+  Trader GetTraderByIndex(int index);
   std::string CheckTrader(long id);
   bool AddTrader(Trader t);
   std::string DeleteTrader(int t);
   std::string DeleteTrader(long id);
   std::string ToString();
   std::string GetName();
+  void AddOrder(Order o);
   template<typename T>
   std::string ToString(std::vector<T> vector);
  private:
