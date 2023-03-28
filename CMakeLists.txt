@@ -15,7 +15,6 @@ add_executable(ExchangeCheck
         Starter.cpp
         Order/Order.cpp
         Order/OrderActionHandler.cpp
-        Order/Transaction.cpp
         Order/Type.cpp
         Trader/Trader.cpp
         Actions/Action.cpp
