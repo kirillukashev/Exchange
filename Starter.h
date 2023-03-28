@@ -10,9 +10,8 @@
 class Starter {
  public:
   Starter(StockExchange se);
-  std::vector<std::string> Interpret(StockExchange se, std::vector<std::string> parsed);
-  void StartSession(StockExchange se);
-
+  std::vector<std::string> Interpret(StockExchange& se, std::vector<std::string> parsed);
+  void StartSession(StockExchange& se);
  private:
   void Split(const std::string& s, std::vector<std::string>& elems);
   StockExchange context_;

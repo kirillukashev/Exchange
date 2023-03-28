@@ -24,7 +24,7 @@ Starter::Starter(StockExchange se): context_(se) {
   this->order_action_handler_ = OrderActionHandler(se);
 }
 
-std::vector<std::string> Starter::Interpret(StockExchange se, std::vector<std::string> parsed) {
+std::vector<std::string> Starter::Interpret(StockExchange& se, std::vector<std::string> parsed) {
   if (!parsed.empty()) {
     for (auto &i : parsed) {
       std::transform(i.begin(), i.end(), i.begin(), ::toupper);
@@ -46,6 +46,7 @@ std::vector<std::string> Starter::Interpret(StockExchange se, std::vector<std::s
     if (leader == "COMPANY") {
         return company_action_handler_.HandleAction(action);
     } else if (leader == "TRADER") {
+        std::cout << context_.GetCompanies().size() << '\n';
         return trader_action_handler_.HandleAction(action);
     } else if (leader == "ORDER") {
 //        return order_action_handler_.HandleAction(action);
@@ -69,7 +70,7 @@ std::vector<std::string> Starter::Interpret(StockExchange se, std::vector<std::s
           "  EXIT (only in interpreter mode)"};
 }
 
-void Starter::StartSession(StockExchange se) {
+void Starter::StartSession(StockExchange& se) {
   std::string s;
   while (true) {
     std::getline(std::cin, s);
@@ -85,6 +86,7 @@ void Starter::StartSession(StockExchange se) {
     for (const std::string& i : interpreted) {
       std::cout << i << "\n";
     }
+    std::cout
   }
 }
 

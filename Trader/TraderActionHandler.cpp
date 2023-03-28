@@ -41,11 +41,13 @@ std::vector<std::string> TraderActionHandler::HandleAction(const Action& action)
         std::string holdings_string;
         if (arguments.size() >= 4 && arguments.size() % 2 == 0) {
           for (int i = 2; i < arguments.size(); i += 2) {
-            //t.PutHolding(context.GetCompanyInf(), std::stoi(arguments[i + 1]));
-//            std::transform(arguments[i].begin(), arguments[i].end(), arguments[i].begin(), ::toupper);
-//            Company* c = context.GetCompany(arguments[i]);
-//            t.PutHolding(context.GetCompany(arguments[i])->GetStock(), std::stoi(arguments[i + 1]));
-//              return_ans.push_back("Failed to add holding {" + arguments[i] + ": " + arguments[i + 1] + "}");
+            int index = context.GetCompanyIndex(arguments[i]);
+            std::cout << index << '\n';
+            if (index != -1) {
+              t.PutHolding(context.GetCompanyByIndex(index).GetStock(), std::stoi(arguments[i + 1]));
+            } else {
+              return_ans.push_back("Failed to add holding {" + arguments[i] + ": " + arguments[i + 1] + "}");
+            }
           }
 
           if (context.AddTrader(t)) {
