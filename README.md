@@ -16,4 +16,4 @@
     * `EXECUTE_ALL` - Executes staged orders if conditions are met
     * `STAGE` - Adds and stages a new order
 
-![](./ExchangeUML-1.pdf)
+![](./ExchangeUML-1.png)
