@@ -1,4 +1,4 @@
-#include "Transaction.h"
+/*#include "Transaction.h"
 
 Transaction::Transaction() {}
 
@@ -39,4 +39,4 @@ std::string Transaction::ToString() {
 
 bool execute() {
   //TODO
-}
+}*/
