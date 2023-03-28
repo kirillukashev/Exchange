@@ -121,6 +121,30 @@ void StockExchange::AddOrder(Order o) {
   orders_.push_back(o);
 }
 
+std::vector<Order> StockExchange::GetOrders() {
+  return orders_;
+}
+
+std::string StockExchange::ExecuteOrder(Order o, int index_order) {
+  Stock s = o.GetStock();
+  std::string ticker = s.GetTicker();
+  int index_company = GetCompanyIndex(ticker);
+  int index_trader = GetTraderInd(o.GetTrader().GetId());
+  Company c = GetCompanyByIndex(index_company);
+  if ((s.GetLowPrice() <= o.GetRate() && o.GetRate() <= s.GetHighPrice())
+      && c.GetQuantity() >= o.GetQuantity()
+      && o.GetQuantity() * o.GetRate() <= o.GetTrader().GetCurrency()) {
+    companies_[index_company].SetQuantity(companies_[index_company].GetQuantity() - o.GetQuantity());
+    int actual_quan = traders_[index_trader].GetHolding(o.GetStock());
+    traders_[index_trader].PutHolding(o.GetStock(), actual_quan + o.GetQuantity());
+    traders_[index_trader].SetCurrency(traders_[index_trader].GetCurrency() - o.GetQuantity() * o.GetRate());
+    orders_.erase(orders_.begin() + index_order);
+    return o.ToString() + "Accepted!";
+  } else {
+    return o.ToString() + "Failed!";
+  }
+}
+
 std::string StockExchange::ToString() {
   std::string return_ans =  "StockExchange {name='" + name_ + '\'' +
                             ", publiclyListedCompanies=" + ToString(companies_) +

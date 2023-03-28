@@ -6,22 +6,14 @@ OrderActionHandler::OrderActionHandler(StockExchange* se) :
 std::vector<std::string> OrderActionHandler::HandleAction(Action action) {
   std::vector<std::string> return_ans;
   std::vector<std::string> arguments = action.arguments;
+  std::vector<Order> orders_ex = context->GetOrders();
   switch (action.action_type) {
     case EXECUTE_ALL:
       return_ans.push_back("* EXECUTING ORDERS *");
-//      ArrayList<Transaction> transactions = this.context.executeOrders();
-//      if (transactions != null && transactions.size() > 0) {
-//        Iterator var17 = transactions.iterator();
-//
-//        while(var17.hasNext()) {
-//          Transaction t = (Transaction)var17.next();
-//          ret.add("Executed " + t.toString());
-//        }
-//      }
-//
-//      assert transactions != null;
-//
-//      ret.add(transactions.size() + " order(s) executed in total");
+      for (int x = 0; x < orders_ex.size(); ++x) {
+        return_ans.push_back( context->ExecuteOrder(orders_ex[x], x));
+      }
+      return_ans.push_back("* ORDERS PROCESSED *");
       break;
     case STAGE:
       std::cout << "\n";

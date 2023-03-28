@@ -28,6 +28,8 @@ class StockExchange {
   std::string ToString();
   std::string GetName();
   void AddOrder(Order o);
+  std::vector<Order> GetOrders();
+  std::string ExecuteOrder(Order o, int index_order);
   template<typename T>
   std::string ToString(std::vector<T> vector);
  private:
