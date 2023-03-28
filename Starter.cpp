@@ -3,7 +3,7 @@
 void Starter::Split(const std::string& s, std::vector<std::string>& elems) {
   int start = 0;
   for (int i = 0; i < s.size(); ++i) {
-    if (s[i] == ' ' || s[i] == ':' || s[i] == '{' || s[i] == '}' || s[i] == ',') {
+    if (s[i] == ' ' || s[i] == ':' || s[i] == '{' || s[i] == '}' || s[i] == ',' || s[i] == '"') {
       if (i > start) {
         elems.push_back(s.substr(start, i - start));
       }

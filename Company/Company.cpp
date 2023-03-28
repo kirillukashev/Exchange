@@ -11,11 +11,14 @@ Company::Company(std::string name, std::string ticker, std::string category, dou
 }
 
 int Company::GetCategoryIndex(std::string s) {
+  bool f = 0;
   for (int i = 0; i < category_list.size(); ++i) {
     if (s == category_list[i]) {
+      f = 1;
       return i;
     }
   }
+  if (!f) throw std::invalid_argument("This category does not exist");
 }
 
 std::string Company::GetName() {

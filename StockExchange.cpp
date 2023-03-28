@@ -59,9 +59,11 @@ std::vector<Company> StockExchange::GetCompanies() {
 }
 
 int StockExchange::GetCompanyInd(std::string ticker) {
+  bool f = 0;
   std::transform(ticker.begin(), ticker.end(), ticker.begin(), ::toupper);
   for (int i = 0; i < companies_.size(); ++i) {
     if (companies_[i].GetStock().GetTicker() == ticker) {
+      f = 1;
       return i;
     }
   }
@@ -93,11 +95,11 @@ bool StockExchange::AddCompany(Company c) {
 std::string StockExchange::DeleteCompany(std::string ticker) {
   int ind = GetCompanyInd(ticker);
   if (ind != -1) {
-    std::string ans = ("Deleted " + companies_[ind].ToString());
+    std::string ans = companies_[ind].ToString();
     companies_.erase(companies_.begin() + ind);
     return ans;
   }
-  return ("Company with id " + ticker + " isn't registered with " + GetName());
+  return "NULL";
 }
 
 template<typename T>

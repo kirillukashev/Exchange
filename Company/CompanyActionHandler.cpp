@@ -60,17 +60,12 @@ std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
     case DELETE:
       if (arguments.size() == 1) {
         std::string ticker = arguments[0];
-//        Company *c = context.GetCompany(ticker);
-//        if (c != nullptr) {
-//          if (context.DeleteCompany(c)) {
-//            return_ans.push_back("Deleted " + c->ToString());
-//          } else {
-//            return_ans.push_back("Failed to delete company '" + ticker + "'");
-//          }
-//        } else {
-//          return_ans.push_back("Company with id " + ticker + " isn't registered with " + context.GetName());
-//        }
-        return_ans.push_back(context.DeleteCompany(ticker));
+        std::string name_company = context.DeleteCompany(ticker);
+        if (name_company != "NULL") {
+          return_ans.push_back("Deleted " + name_company);
+        } else {
+          return_ans.push_back("Company with ticker " + ticker + " isn't registered");
+        }
       } else {
         return_ans.push_back("Usage: COMPANY DELETE id?");
       }
