@@ -12,8 +12,8 @@ class Company {
   Company();
   Company(std::string name, std::string ticker, std::string category, double open_price,
           double close_price, double low_price, double high_price, int quantity_stock);
-  int GetCategoryIndex(std::string s);
 
+  static int GetCategoryIndex(std::string s);
   std::string GetName();
   void SetName(std::string name);
   int GetCategoryIndex();

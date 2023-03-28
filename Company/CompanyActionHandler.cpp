@@ -1,6 +1,6 @@
 #include "CompanyActionHandler.h"
 
-CompanyActionHandler::CompanyActionHandler(StockExchange se) :
+CompanyActionHandler::CompanyActionHandler(StockExchange* se) :
       ActionHandler(se, "ORDER") {}
 
 std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
@@ -10,9 +10,9 @@ std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
     case SHOW:
       if (arguments.size() == 1) {
         std::string ticker = arguments[0];
-        int index = context.GetCompanyIndex(ticker);
+        int index = context->GetCompanyIndex(ticker);
         if (index != -1) {
-          return_ans.push_back(context.GetCompanyByIndex(index).ToString());
+          return_ans.push_back(context->GetCompanyByIndex(index).ToString());
         } else {
           return_ans.push_back("Company with ticker " + ticker + " isn't registered");
         }
@@ -27,7 +27,7 @@ std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
       if (arguments.size() == 1) {
         std::string category = arguments[0];
         return_ans.push_back("SHOWING '" + category + "' COMPANIES");
-        std::vector<Company> companies = context.GetCompaniesByCategory(category);
+        std::vector<Company> companies = context->GetCompaniesByCategory(category);
         if (companies.size() > 0) {
           for (int x = 0; x < companies.size(); ++x) {
             return_ans.push_back(companies[x].ToString());
@@ -49,19 +49,27 @@ std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
         double low_price = std::stod(arguments[5]);
         double high_price = std::stod(arguments[6]);
         int quantity_stock = std::stoi(arguments[7]);
-        Company c(name, ticker, category, open_price, close_price, low_price, high_price, quantity_stock);
-        if (context.AddCompany(c)) {
+        if (Company::GetCategoryIndex(category) == -1) {
+          return_ans.push_back("This category does not exist");
+          return_ans.push_back("Usage: COMPANY ADD name? ticker? category? open_price?"
+                               " close_price? low_price? high_price? quantity_stock?");
+          break;
+        }
+        Company c(name, ticker, category, open_price, close_price, low_price,
+                  high_price, quantity_stock);
+        if (context->AddCompany(c)) {
           return_ans.push_back("Added " + c.ToString());
           break;
         }
         return_ans.push_back("Failed to add company '" + ticker + "'");
       }
-      return_ans.push_back("Usage: COMPANY ADD name? ticker? category? open_price? close_price? low_price? high_price? quantity_stock_?");
+      return_ans.push_back("Usage: COMPANY ADD name? ticker? category? open_price? "
+                           "close_price? low_price? high_price? quantity_stock?");
       break;
     case DELETE:
       if (arguments.size() == 1) {
         std::string ticker = arguments[0];
-        std::string name_company = context.DeleteCompany(ticker);
+        std::string name_company = context->DeleteCompany(ticker);
         if (name_company != "NULL") {
           return_ans.push_back("Deleted " + name_company);
         } else {
@@ -76,7 +84,8 @@ std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
       return_ans.push_back("  COMPANY SHOW ticker?");
       return_ans.push_back("  COMPANY SHOW_CATEGORIES");
       return_ans.push_back("  COMPANY SHOW_CATEGORY category?");
-      return_ans.push_back("  COMPANY ADD name? ticker? category? open_price? close_price? low_price? high_price? quantity_stock_?");
+      return_ans.push_back("  COMPANY ADD name? ticker? category? open_price?"
+                           " close_price? low_price? high_price? quantity_stock_?");
       return_ans.push_back("  COMPANY DELETE ticker?");
   }
   return return_ans;

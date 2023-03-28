@@ -3,6 +3,9 @@
 StockExchange::StockExchange(std::string name) {
   std::transform(name.begin(), name.end(), name.begin(), ::toupper);
   this->name_ = name;
+  traders_.resize(0);
+  companies_.resize(0);
+  orders_.resize(0);
 }
 
 bool StockExchange::AddTrader(Trader t) {
@@ -61,6 +64,7 @@ std::vector<Company> StockExchange::GetCompanies() {
 int StockExchange::GetCompanyIndex(std::string ticker) {
   std::transform(ticker.begin(), ticker.end(), ticker.begin(), ::toupper);
   for (int i = 0; i < companies_.size(); ++i) {
+    std::string tic = companies_[i].GetStock().GetTicker();
     if (companies_[i].GetStock().GetTicker() == ticker) {
       return i;
     }

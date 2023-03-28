@@ -13,14 +13,12 @@ Company::Company(std::string name, std::string ticker, std::string category, dou
 }
 
 int Company::GetCategoryIndex(std::string s) {
-  bool f = 0;
   for (int i = 0; i < category_list.size(); ++i) {
     if (s == category_list[i]) {
-      f = 1;
       return i;
     }
   }
-  if (!f) throw std::invalid_argument("This category does not exist");
+  return -1;
 }
 
 std::string Company::GetName() {
@@ -52,15 +50,13 @@ std::string Company::GetCategory() {
 }
 
 void Company::SetCategory(std::string category) {
-  bool f = 0;
   for (int i = 0; i < category_list.size(); ++i) {
     if (category == category_list[i]) {
       this->category_index_ = i;
-      f = 1;
       break;
     }
   }
-  if (!f) throw std::invalid_argument("This category does not exist");
+  throw std::invalid_argument("This category does not exist");
 }
 
 int Company::GetQuantity() {

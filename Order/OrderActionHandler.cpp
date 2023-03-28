@@ -1,6 +1,6 @@
 #include "OrderActionHandler.h"
 
-OrderActionHandler::OrderActionHandler(StockExchange se) :
+OrderActionHandler::OrderActionHandler(StockExchange* se) :
       ActionHandler(se, "COMPANY") {}
 
 std::vector<std::string> OrderActionHandler::HandleAction(Action action) {

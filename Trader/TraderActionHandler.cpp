@@ -1,6 +1,6 @@
 #include "TraderActionHandler.h"
 
-TraderActionHandler::TraderActionHandler(StockExchange se) :
+TraderActionHandler::TraderActionHandler(StockExchange* se) :
         ActionHandler(se, "TRADER") {}
 
 std::vector<std::string> TraderActionHandler::HandleAction(const Action& action) {
@@ -11,7 +11,7 @@ std::vector<std::string> TraderActionHandler::HandleAction(const Action& action)
     case SHOW:
       if (arguments.size() == 1) {
         long id = std::stol(arguments[0]);
-        return_ans.push_back(context.CheckTrader(id));
+        return_ans.push_back(context->CheckTrader(id));
       } else {
         return_ans.push_back("Usage: TRADER SHOW id?");
       }
@@ -23,17 +23,13 @@ std::vector<std::string> TraderActionHandler::HandleAction(const Action& action)
         double currency = std::stod(arguments[1]);
         Trader t = Trader(name, currency);
 
-        if (context.AddTrader(t)) {
+        if (context->AddTrader(t)) {
             return_ans.push_back("Added " + t.ToString());
           break;
         } else {
           return_ans.push_back("Failed to add trader '" + name + "'");
         }
       }
-      for (int x = 0; x < arguments.size(); ++x) {
-        std::cout << arguments[x] << ' ';
-      }
-      std::cout << '\n';
       if (arguments.size() >= 3) {
         std::string name = arguments[0];
         double currency = std::stod(arguments[1]);
@@ -41,16 +37,15 @@ std::vector<std::string> TraderActionHandler::HandleAction(const Action& action)
         std::string holdings_string;
         if (arguments.size() >= 4 && arguments.size() % 2 == 0) {
           for (int i = 2; i < arguments.size(); i += 2) {
-            int index = context.GetCompanyIndex(arguments[i]);
-            std::cout << index << '\n';
+            int index = context->GetCompanyIndex(arguments[i]);
             if (index != -1) {
-              t.PutHolding(context.GetCompanyByIndex(index).GetStock(), std::stoi(arguments[i + 1]));
+              t.PutHolding(context->GetCompanyByIndex(index).GetStock(), std::stoi(arguments[i + 1]));
             } else {
               return_ans.push_back("Failed to add holding {" + arguments[i] + ": " + arguments[i + 1] + "}");
             }
           }
 
-          if (context.AddTrader(t)) {
+          if (context->AddTrader(t)) {
             return_ans.push_back("Added " + t.ToString());
             break;
           } else {
@@ -75,7 +70,7 @@ std::vector<std::string> TraderActionHandler::HandleAction(const Action& action)
 //        } else {
 //          return_ans.push_back("Trader with id " + id_str + " isn't registered with " + context.GetName());
 //        }
-        return_ans.push_back(context.DeleteTrader(std::stol(id_str)));
+        return_ans.push_back(context->DeleteTrader(std::stol(id_str)));
       } else {
         return_ans.push_back("Usage: TRADER DELETE id?");
       }

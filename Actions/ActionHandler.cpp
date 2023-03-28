@@ -49,5 +49,5 @@ ActionType ActionHandler::GetActionType(std::string actionString) {
   return ActionType::NULL0;
 }
 
-ActionHandler::ActionHandler(StockExchange cont, std::string lead):
+ActionHandler::ActionHandler(StockExchange* cont, std::string lead):
   action_leader(lead), context(cont) {}
