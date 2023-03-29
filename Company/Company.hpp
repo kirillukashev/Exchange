@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include "Stock.h"
+#include "Stock.hpp"
 
 const std::vector<std::string> category_list = {"ENERGY", "MATERIALS", "INDUSTRY", "FINANCE", "IT"};
 
@@ -31,4 +31,3 @@ class Company {
   Stock stock_;
   int quantity_stock_;
 };
-

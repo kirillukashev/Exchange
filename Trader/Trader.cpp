@@ -1,4 +1,4 @@
-#include "Trader.h"
+#include "Trader.hpp"
 
 std::string Trader::ToString() {
   std::string return_ans = "Trader{id = " + std::to_string(id_) +

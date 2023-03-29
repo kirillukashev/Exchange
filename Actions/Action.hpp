@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ActionHandler.h"
-#include "ActionType.h"
+#include "ActionHandler.hpp"
+#include "ActionType.hpp"
 #include <iostream>
 #include <vector>
 

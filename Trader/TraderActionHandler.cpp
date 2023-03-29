@@ -1,4 +1,4 @@
-#include "TraderActionHandler.h"
+#include "TraderActionHandler.hpp"
 
 TraderActionHandler::TraderActionHandler(StockExchange* se) :
         ActionHandler(se, "TRADER") {}
@@ -60,16 +60,6 @@ std::vector<std::string> TraderActionHandler::HandleAction(const Action& action)
     case DELETE:
       if (arguments.size() == 1) {
         std::string id_str = arguments[0];
-//        Trader *t = context.GetTrader(std::stol(id_str));
-//        if (t != nullptr) {
-//          if (context.DeleteTrader(t)) {
-//              return_ans.push_back("Deleted " + t->ToString());
-//          } else {
-//            return_ans.push_back("Failed to delete trader " + id_str);
-//          }
-//        } else {
-//          return_ans.push_back("Trader with id " + id_str + " isn't registered with " + context.GetName());
-//        }
         return_ans.push_back(context->DeleteTrader(std::stol(id_str)));
       } else {
         return_ans.push_back("Usage: TRADER DELETE id?");

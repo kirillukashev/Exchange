@@ -2,10 +2,10 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
-#include "Actions/Action.h"
-#include "Trader/TraderActionHandler.h"
-#include "CompanyActionHandler.h"
-#include "OrderActionHandler.h"
+#include "Actions/Action.hpp"
+#include "Trader/TraderActionHandler.hpp"
+#include "Company/CompanyActionHandler.hpp"
+#include "Order/OrderActionHandler.hpp"
 
 class Starter {
  public:

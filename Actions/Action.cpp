@@ -1,4 +1,4 @@
-#include "Action.h"
+#include "Action.hpp"
 
 Action::Action(ActionType action_type, std::vector<std::string> arguments) :
        action_type(action_type), arguments(arguments) {}

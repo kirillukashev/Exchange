@@ -1,4 +1,4 @@
-#include "Starter.h"
+#include "Starter.hpp"
 
 void Starter::Split(const std::string& s, std::vector<std::string>& elems) {
   int start = 0;
@@ -57,7 +57,7 @@ std::vector<std::string> Starter::Interpret(std::vector<std::string> parsed) {
           "    COMPANY SHOW ticker?",
           "    COMPANY SHOW_CATEGORIES",
           "    COMPANY SHOW_CATEGORY category?",
-          "    COMPANY ADD name? ticker? category? open_price? close_price? low_price? high_price?",
+          "    COMPANY ADD name? ticker? category? open_price? close_price? low_price? high_price? quantity_stock?",
           "    COMPANY DELETE ticker?",
           "  TRADER:",
           "    TRADER SHOW id?",
@@ -87,4 +87,3 @@ void Starter::StartSession() {
     }
   }
 }
-

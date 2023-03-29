@@ -1,4 +1,4 @@
-#include "Type.h"
+#include "Type.hpp"
 
 std::string Type::GetStringFromType(OrderType type) {
   switch (type) {

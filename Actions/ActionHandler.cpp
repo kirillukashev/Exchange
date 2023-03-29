@@ -1,4 +1,4 @@
-#include "ActionHandler.h"
+#include "ActionHandler.hpp"
 
 std::string ActionHandler::GetActionString(ActionType action) {
   switch (action) {

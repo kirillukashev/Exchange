@@ -1,6 +1,6 @@
 #include <iostream>
-#include "StockExchange.h"
-#include "Starter.h"
+#include "StockExchange.hpp"
+#include "Starter.hpp"
 
 bool CheckNumb(std::string s) {
   for (auto c : s) {

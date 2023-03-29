@@ -2,10 +2,10 @@
 
 #include <string>
 #include <vector>
-#include "../Actions/ActionHandler.h"
-#include "../Actions/ActionType.h"
-#include "../Actions/Action.h"
-#include "Company.h"
+#include "../Actions/ActionHandler.hpp"
+#include "../Actions/ActionType.hpp"
+#include "../Actions/Action.hpp"
+#include "Company.hpp"
 
 class CompanyActionHandler : public ActionHandler {
  public:
