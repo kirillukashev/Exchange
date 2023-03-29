@@ -4,9 +4,9 @@
 #include <vector>
 #include <algorithm>
 #include <string>
-#include "Trader/Trader.h"
-#include "Company/Company.h"
-#include "Order/Order.h"
+#include "Trader/Trader.hpp"
+#include "Company/Company.hpp"
+#include "Order/Order.hpp"
 
 class StockExchange {
  public:

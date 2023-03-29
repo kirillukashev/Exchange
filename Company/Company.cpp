@@ -1,4 +1,4 @@
-#include "Company.h"
+#include "Company.hpp"
 
 Company::Company() {}
 

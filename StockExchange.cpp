@@ -1,4 +1,4 @@
-#include "StockExchange.h"
+#include "StockExchange.hpp"
 
 StockExchange::StockExchange(std::string name) {
   std::transform(name.begin(), name.end(), name.begin(), ::toupper);

@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <algorithm>
-#include "OrderType.h"
+#include "OrderType.hpp"
 
 class Type {
  public:

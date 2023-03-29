@@ -1,9 +1,9 @@
 #pragma once
 
-#include "ActionType.h"
+#include "ActionType.hpp"
 #include <iostream>
 #include <algorithm>
-#include "StockExchange.h"
+#include "../StockExchange.hpp"
 
 class ActionHandler {
  public:

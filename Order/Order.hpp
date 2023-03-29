@@ -2,9 +2,9 @@
 
 #include<iostream>
 #include <string>
-#include "Trader/Trader.h"
-#include "Company/Stock.h"
-#include "Type.h"
+#include "../Trader/Trader.hpp"
+#include "../Company/Stock.hpp"
+#include "Type.hpp"
 
 class Order {
  public:

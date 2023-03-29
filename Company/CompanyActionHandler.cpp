@@ -1,4 +1,4 @@
-#include "CompanyActionHandler.h"
+#include "CompanyActionHandler.hpp"
 
 CompanyActionHandler::CompanyActionHandler(StockExchange* se) :
       ActionHandler(se, "ORDER") {}

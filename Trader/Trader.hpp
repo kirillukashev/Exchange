@@ -1,8 +1,8 @@
 #pragma once
 
 #include <iostream>
-#include "../Company/Stock.h"
 #include <unordered_map>
+#include "../Company/Stock.hpp"
 
 static int count = 0;
 
