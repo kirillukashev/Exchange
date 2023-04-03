@@ -19,7 +19,7 @@ The program receives a prescribed scenario of actions on the exchange, and then 
 cd ~/Exchange #Create an empty directory for temporary files and go there
 mkdir build
 cd build
-cmake ~/Exchange/ #Running the cmake command with the path to the folder with the sources
+cmake .. #Running the cmake command with the path to the folder with the sources
 cmake --build .
 ```
 
