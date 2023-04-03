@@ -15,7 +15,7 @@ The current functionality allows traders to make orders to buy shares from compa
 
 The program receives a prescribed scenario of actions on the exchange, and then it executes it
 ## Project build
-```no-highlight
+```bash
 cd ~/Exchange #Create an empty directory for temporary files and go there
 mkdir build
 cd build
@@ -24,7 +24,7 @@ cmake --build .
 ```
 
 ## Project launch
-```no-highlight
+```bash
 ./ExchangeCheck
 ```
 
