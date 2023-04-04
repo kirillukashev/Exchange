@@ -50,4 +50,4 @@ cmake --build .
     * `STAGE` - Adds and stages a new order
 
 ## UML DIARGAM
-![](./exchange_UML.png)
+![](./Exchange_UML.png)
