@@ -2,10 +2,10 @@
 
 *С++ MIPT 2023*
 
->Authors
->>Lukashev Kirill
+> Authors
+>> Lukashev Kirill
 >
->>Borshcheva Elizabeth
+>> Borshcheva Elizabeth
 
 ## Description
 
@@ -14,6 +14,12 @@ This project represents a model of an exchange where there are companies and tra
 The current functionality allows traders to make orders to buy shares from companies
 
 The program receives a prescribed scenario of actions on the exchange, and then it executes it
+
+## System requirements
+
+> C++ 14\
+> CMake VERSION 3.23
+
 ## Project build
 ```bash
 cd ~/Exchange #Create an empty directory for temporary files and go there
@@ -44,4 +50,4 @@ cmake --build .
     * `STAGE` - Adds and stages a new order
 
 ## UML DIARGAM
-![](./exchange_uml.png)
+![](./exchange_UML.png)
