@@ -49,5 +49,9 @@ cmake --build .
     * `EXECUTE_ALL` - Executes staged orders if conditions are met
     * `STAGE` - Adds and stages a new order
 
-## UML DIAGRAM
+## Uml diargram
 ![](./Exchange_UML.png)
+
+## Use-Case diagram
+
+![](./Exchange_use_case.png)
