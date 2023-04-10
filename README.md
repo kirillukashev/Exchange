@@ -50,7 +50,7 @@ cmake --build .
     * `STAGE` - Adds and stages a new order
 
 ## Uml diargram
-![](./Exchange_UML.png)
+![](./StockExchange_UML.png)
 
 ## Use-Case diagram
 
