@@ -54,4 +54,4 @@ cmake --build .
 
 ## Use-Case diagram
 
-![](./Exchange_use_case.png)
+![](./Use_case.png)
