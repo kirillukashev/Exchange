@@ -11,6 +11,7 @@ class Order {
   Order();
   Order(Trader trader, Stock stock, Type type, int quantity, double rate);
   Order(Trader trader, Stock stock, std::string type, int quantity, double rate);
+  ~Order() = default;
 
   Trader GetTrader();
   void SetTrader(Trader trader);

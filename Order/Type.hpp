@@ -12,6 +12,7 @@ class Type {
   Type();
   Type(std::string type);
   Type(OrderType type);
+  ~Type() = default;
 
   OrderType GetOrderType();
   std::string GetOrderString();

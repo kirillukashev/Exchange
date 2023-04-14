@@ -8,6 +8,7 @@ class Stock {
  public:
   Stock();
   Stock(std::string ticker, double open_price, double close_price, double low_price, double high_price);
+  ~Stock() = default;
 
   std::string GetTicker();
   void SetTicker(std::string ticker);

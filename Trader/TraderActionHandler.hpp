@@ -11,6 +11,7 @@
 class TraderActionHandler : public ActionHandler {
  public:
   TraderActionHandler() = default;
+  ~TraderActionHandler() = default;
   TraderActionHandler(StockExchange* se);
   std::vector<std::string> HandleAction(const Action& action);
 };

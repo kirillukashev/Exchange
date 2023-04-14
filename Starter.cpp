@@ -24,6 +24,10 @@ Starter::Starter(StockExchange* se): context_(se) {
   this->order_action_handler_ = OrderActionHandler(se);
 }
 
+Starter::~Starter() {
+  delete context_;
+}
+
 std::vector<std::string> Starter::Interpret(std::vector<std::string> parsed) {
   if (!parsed.empty()) {
     for (auto &i : parsed) {
