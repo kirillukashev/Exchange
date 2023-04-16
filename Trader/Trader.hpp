@@ -9,6 +9,7 @@ static int count = 0;
 class Trader {
  public:
   Trader();
+  ~Trader() = default;
   Trader(std::string name, double currency, std::unordered_map<int, std::pair<Stock, int>>);
   Trader(std::string name, double currency);
 

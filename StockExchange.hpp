@@ -12,6 +12,7 @@ class StockExchange {
  public:
   StockExchange() = default;
   StockExchange(std::string name);
+  ~StockExchange() = default;
 
   std::vector<Company> GetCompanies();
   Company GetCompanyByIndex(int index);

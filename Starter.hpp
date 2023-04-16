@@ -10,6 +10,7 @@
 class Starter {
  public:
   Starter(StockExchange* se);
+  ~Starter();
   std::vector<std::string> Interpret(std::vector<std::string> parsed);
   void StartSession();
  private:

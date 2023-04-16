@@ -51,3 +51,7 @@ ActionType ActionHandler::GetActionType(std::string actionString) {
 
 ActionHandler::ActionHandler(StockExchange* cont, std::string lead):
   action_leader(lead), context(cont) {}
+
+ActionHandler::~ActionHandler() {
+  delete context;
+}
