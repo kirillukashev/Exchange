@@ -20,9 +20,9 @@ class Trader {
   double GetCurrency();
   void SetCurrency(double currency);
   std::unordered_map<int, std::pair<Stock, int>> GetHoldings();
-  int GetHolding(Stock s);
+  int GetHolding(Stock stock);
   void SetHoldings(std::unordered_map<int, std::pair<Stock, int>> holdings);
-  void PutHolding(Stock s, int q);
+  void PutHolding(Stock stock, int quantity);
   double PutCurrency(double currency);
   std::string ToStringHoldings();
   std::string ToString();

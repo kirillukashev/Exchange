@@ -2,9 +2,9 @@
 #include "StockExchange.hpp"
 #include "Starter.hpp"
 
-bool CheckNumb(std::string s) {
-  for (auto c : s) {
-    if (c < '0' || c > '9') {
+bool CheckNumb(std::string string) {
+  for (auto symbol : string) {
+    if (symbol < '0' || symbol > '9') {
       return false;
     }
   }
@@ -16,11 +16,11 @@ int main() {
   std::string stock_exchange_name;
   std::cin >> stock_exchange_name;
   std::cout << "\n";
-  StockExchange* se = new StockExchange(stock_exchange_name);
+  StockExchange* exchange = new StockExchange(stock_exchange_name);
 
   int control;
   do {
-    std::cout << se->GetName() + " (STOCK EXCHANGE SERVICES)\n";
+    std::cout << exchange->GetName() + " (STOCK EXCHANGE SERVICES)\n";
     std::cout << "Please choose: \n";
     std::cout << "1. Start Interpreter\n";
     std::cout << "2. Load Input File\n";
@@ -34,10 +34,10 @@ int main() {
       continue;
     }
     control = std::stoi(input);
-    Starter starter = Starter(se);
+    Starter starter = Starter(exchange);
     switch (control) {
       case 1:
-        std::cout << "\n" << se->GetName() << " INTERPRETER\n";
+        std::cout << "\n" << exchange->GetName() << " INTERPRETER\n";
         std::cout << "Type 'help' to check usages\n\n";
         starter.StartSession();
         break;
@@ -52,5 +52,6 @@ int main() {
         break;
     }
   } while (control != 4);
+  delete exchange;
   return 0;
 }

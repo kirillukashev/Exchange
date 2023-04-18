@@ -17,20 +17,20 @@ class StockExchange {
   std::vector<Company> GetCompanies();
   Company GetCompanyByIndex(int index);
   int GetCompanyIndex(std::string ticker);
-  std::vector<Company> GetCompaniesByCategory(std::string s);
-  bool AddCompany(Company c);
+  std::vector<Company> GetCompaniesByCategory(std::string ticker);
+  bool AddCompany(Company company);
   std::string DeleteCompany(std::string ticker);
   int GetTraderInd(long id);
   Trader GetTraderByIndex(int index);
   std::string CheckTrader(long id);
-  bool AddTrader(Trader t);
-  std::string DeleteTrader(int t);
+  bool AddTrader(Trader trader);
+  std::string DeleteTrader(int index);
   std::string DeleteTrader(long id);
   std::string ToString();
   std::string GetName();
-  void AddOrder(Order o);
+  void AddOrder(Order order);
   std::vector<Order> GetOrders();
-  std::string ExecuteOrder(Order o, int index_order);
+  std::string ExecuteOrder(Order order, int index_order);
   template<typename T>
   std::string ToString(std::vector<T> vector);
  private:

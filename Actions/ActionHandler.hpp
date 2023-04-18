@@ -12,7 +12,7 @@ class ActionHandler {
 
   ActionHandler() = default;
   ActionHandler(StockExchange* cont, std::string lead);
-  ~ActionHandler();
+  ~ActionHandler() = default;
   static std::string GetActionString(ActionType action);
   static ActionType GetActionType(std::string actionString);
 };

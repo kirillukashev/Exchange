@@ -24,15 +24,15 @@ std::string StockExchange::DeleteTrader(long id) {
   return ("Trader with id " + std::to_string(id) + " isn't registered with " + GetName());
 }
 
-std::string StockExchange::DeleteTrader(int i) {
+std::string StockExchange::DeleteTrader(int index) {
   for (std::vector<Trader>::iterator it = traders_.begin(); it != traders_.end(); ++it) {
-    if (it->GetId() == traders_[i].GetId()) {
-      std::string ans = ("Deleted " + traders_[i].ToString());
+    if (it->GetId() == traders_[index].GetId()) {
+      std::string ans = ("Deleted " + traders_[index].ToString());
       traders_.erase(it);
       return ans;
     }
   }
-  return ("Failed to delete trader " + std::to_string(traders_[i].GetId()));
+  return ("Failed to delete trader " + std::to_string(traders_[index].GetId()));
 }
 
 std::string StockExchange::GetName() {
@@ -81,27 +81,27 @@ Company StockExchange::GetCompanyByIndex(int index) {
 
 std::vector<Company> StockExchange::GetCompaniesByCategory(std::string ticker) {
   std::vector<Company> return_ans;
-  for (Company c : companies_) {
-    if (c.GetCategory() == ticker) {
-      return_ans.push_back(c);
+  for (Company company : companies_) {
+    if (company.GetCategory() == ticker) {
+      return_ans.push_back(company);
     }
   }
   return return_ans;
 }
 
-bool StockExchange::AddCompany(Company c) {
-  if (GetCompanyIndex(c.GetStock().GetTicker()) == -1) {
-    this->companies_.push_back(c);
+bool StockExchange::AddCompany(Company company) {
+  if (GetCompanyIndex(company.GetStock().GetTicker()) == -1) {
+    this->companies_.push_back(company);
     return true;
   }
   return false;
 }
 
 std::string StockExchange::DeleteCompany(std::string ticker) {
-  int ind = GetCompanyIndex(ticker);
-  if (ind != -1) {
-    std::string ans = companies_[ind].ToString();
-    companies_.erase(companies_.begin() + ind);
+  int index = GetCompanyIndex(ticker);
+  if (index != -1) {
+    std::string ans = companies_[index].ToString();
+    companies_.erase(companies_.begin() + index);
     return ans;
   }
   return "NULL";
@@ -117,31 +117,31 @@ std::string StockExchange::ToString(std::vector<T> vector) {
   return ans;
 }
 
-void StockExchange::AddOrder(Order o) {
-  orders_.push_back(o);
+void StockExchange::AddOrder(Order order) {
+  orders_.push_back(order);
 }
 
 std::vector<Order> StockExchange::GetOrders() {
   return orders_;
 }
 
-std::string StockExchange::ExecuteOrder(Order o, int index_order) {
-  Stock s = o.GetStock();
-  std::string ticker = s.GetTicker();
+std::string StockExchange::ExecuteOrder(Order order, int index_order) {
+  Stock stock = order.GetStock();
+  std::string ticker = stock.GetTicker();
   int index_company = GetCompanyIndex(ticker);
-  int index_trader = GetTraderInd(o.GetTrader().GetId());
-  Company c = GetCompanyByIndex(index_company);
-  if ((s.GetLowPrice() <= o.GetRate() && o.GetRate() <= s.GetHighPrice())
-      && c.GetQuantity() >= o.GetQuantity()
-      && o.GetQuantity() * o.GetRate() <= o.GetTrader().GetCurrency()) {
-    companies_[index_company].SetQuantity(companies_[index_company].GetQuantity() - o.GetQuantity());
-    int actual_quan = traders_[index_trader].GetHolding(o.GetStock());
-    traders_[index_trader].PutHolding(o.GetStock(), actual_quan + o.GetQuantity());
-    traders_[index_trader].SetCurrency(traders_[index_trader].GetCurrency() - o.GetQuantity() * o.GetRate());
+  int index_trader = GetTraderInd(order.GetTrader().GetId());
+  Company company = GetCompanyByIndex(index_company);
+  if ((stock.GetLowPrice() <= order.GetRate() && order.GetRate() <= stock.GetHighPrice())
+      && company.GetQuantity() >= order.GetQuantity()
+      && order.GetQuantity() * order.GetRate() <= order.GetTrader().GetCurrency()) {
+    companies_[index_company].SetQuantity(companies_[index_company].GetQuantity() - order.GetQuantity());
+    int actual_quan = traders_[index_trader].GetHolding(order.GetStock());
+    traders_[index_trader].PutHolding(order.GetStock(), actual_quan + order.GetQuantity());
+    traders_[index_trader].SetCurrency(traders_[index_trader].GetCurrency() - order.GetQuantity() * order.GetRate());
     orders_.erase(orders_.begin() + index_order);
-    return o.ToString() + "Accepted!";
+    return order.ToString() + "Accepted!";
   } else {
-    return o.ToString() + "Failed!";
+    return order.ToString() + "Failed!";
   }
 }
 

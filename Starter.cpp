@@ -1,31 +1,28 @@
 #include "Starter.hpp"
 
-void Starter::Split(const std::string& s, std::vector<std::string>& elems) {
+void Starter::Split(const std::string& string, std::vector<std::string>& elems) {
   int start = 0;
-  for (int i = 0; i < s.size(); ++i) {
-    if (s[i] == ' ' || s[i] == ':' || s[i] == '{' || s[i] == '}' || s[i] == ',' || s[i] == '"') {
+  for (int i = 0; i < string.size(); ++i) {
+    if (string[i] == ' ' || string[i] == ':' || string[i] == '{' || string[i] == '}'
+        || string[i] == ',' || string[i] == '"') {
       if (i > start) {
-        elems.push_back(s.substr(start, i - start));
+        elems.push_back(string.substr(start, i - start));
       }
       start = i + 1;
     }
   }
-  int i = s.size() - 1;
-  if (s[i] == ' ' || s[i] == ':' || s[i] == '{' || s[i] == '}' || s[i] == ',' || i < start) {
+  int i = static_cast<int>(string.size()) - 1;
+  if (string[i] == ' ' || string[i] == ':' || string[i] == '{' || string[i] == '}' || string[i] == ',' || i < start) {
     return;
   }
-  elems.push_back(s.substr(start, i + 1 - start));
+  elems.push_back(string.substr(start, i + 1 - start));
 }
 
-Starter::Starter(StockExchange* se): context_(se) {
+Starter::Starter(StockExchange* exchange): context_() {
   // registering action handlers
-  this->company_action_handler_ = CompanyActionHandler(se);
-  this->trader_action_handler_ = TraderActionHandler(se);
-  this->order_action_handler_ = OrderActionHandler(se);
-}
-
-Starter::~Starter() {
-  delete context_;
+  this->company_action_handler_ = CompanyActionHandler(exchange);
+  this->trader_action_handler_ = TraderActionHandler(exchange);
+  this->order_action_handler_ = OrderActionHandler(exchange);
 }
 
 std::vector<std::string> Starter::Interpret(std::vector<std::string> parsed) {

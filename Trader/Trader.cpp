@@ -8,8 +8,8 @@ std::string Trader::ToString() {
   return return_ans;
 }
 
-void Trader::PutHolding(Stock s, int q) {
-  holdings_[s.HashCode()] = {s, q};
+void Trader::PutHolding(Stock stock, int quantity) {
+  holdings_[stock.HashCode()] = {stock, quantity};
 }
 
 std::string Trader::ToStringHoldings() {
@@ -18,8 +18,9 @@ std::string Trader::ToStringHoldings() {
   }
   std::string return_str = "{";
   for (auto it = holdings_.begin(); it != holdings_.end();) {
-    Stock s = (it->second).first;
-    return_str += "{stock = " + s.GetTicker() + ", quantity = " + std::to_string(holdings_[s.HashCode()].second) + "}";
+    Stock stock = (it->second).first;
+    return_str += "{stock = " + stock.GetTicker() + ", quantity = "
+               + std::to_string(holdings_[stock.HashCode()].second) + "}";
     it++;
     if (it != holdings_.end()) {
       return_str += ", ";
@@ -33,8 +34,8 @@ std::unordered_map<int, std::pair<Stock, int>> Trader::GetHoldings() {
   return holdings_;
 }
 
-int Trader::GetHolding(Stock s) {
-  return holdings_[s.HashCode()].second;
+int Trader::GetHolding(Stock stock) {
+  return holdings_[stock.HashCode()].second;
 }
 
 void Trader::SetHoldings(std::unordered_map<int, std::pair<Stock, int>> holdings) {
