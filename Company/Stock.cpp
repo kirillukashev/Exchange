@@ -52,12 +52,12 @@ void Stock::SetHighPrice(double high_price) {
 }
 
 int Stock::HashCode() {
-  long long p = 31;
-  long long mod = 1e9 + 7;
+  long long prime = 31;
+  long long module = 1e9 + 7;
   long long hash = 0;
   std::string s = this->GetTicker();
   for(int i = 0; i < s.size(); ++i){
-    hash = (hash * p % mod + (s[i] - 'A' + 1)) % mod;
+    hash = (hash * prime % module + (s[i] - 'A' + 1)) % module;
   }
   return hash;
 }

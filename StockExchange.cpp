@@ -8,27 +8,27 @@ StockExchange::StockExchange(std::string name) {
   orders_.resize(0);
 }
 
-bool StockExchange::AddTrader(Trader t) {
-  if (GetTraderInd(t.GetId()) == -1) {
-    traders_.push_back(t);
+bool StockExchange::AddTrader(Trader trader) {
+  if (GetTraderIndex(trader.GetId()) == -1) {
+    traders_.push_back(trader);
     return true;
   }
   return false;
 }
 
 std::string StockExchange::DeleteTrader(long id) {
-  int ind = GetTraderInd(id);
-  if (ind != -1) {
-    return DeleteTrader(ind);
+  int index = GetTraderIndex(id);
+  if (index != -1) {
+    return DeleteTrader(index);
   }
   return ("Trader with id " + std::to_string(id) + " isn't registered with " + GetName());
 }
 
 std::string StockExchange::DeleteTrader(int index) {
-  for (std::vector<Trader>::iterator it = traders_.begin(); it != traders_.end(); ++it) {
-    if (it->GetId() == traders_[index].GetId()) {
+  for (std::vector<Trader>::iterator trader = traders_.begin(); trader != traders_.end(); ++trader) {
+    if (trader->GetId() == traders_[index].GetId()) {
       std::string ans = ("Deleted " + traders_[index].ToString());
-      traders_.erase(it);
+      traders_.erase(trader);
       return ans;
     }
   }
@@ -40,15 +40,15 @@ std::string StockExchange::GetName() {
 }
 
 std::string StockExchange::CheckTrader(long id) {
-  for (Trader t : traders_) {
-    if (t.GetId() == id) {
-      return t.ToString();
+  for (Trader trader : traders_) {
+    if (trader.GetId() == id) {
+      return trader.ToString();
     }
   }
   return ("Trader with id " + std::to_string(id) + " isn't registered");
 }
 
-int StockExchange::GetTraderInd(long id)  {
+int StockExchange::GetTraderIndex(long id)  {
   for (int i = 0; i < traders_.size(); ++i) {
     if (traders_[i].GetId() == id) {
       return i;
@@ -110,8 +110,8 @@ std::string StockExchange::DeleteCompany(std::string ticker) {
 template<typename T>
 std::string StockExchange::ToString(std::vector<T> vector) {
   std::string ans = "{";
-  for (auto x : vector) {
-    ans += x.ToString();
+  for (auto param : vector) {
+    ans += param.ToString();
   }
   ans += "}";
   return ans;
@@ -129,7 +129,7 @@ std::string StockExchange::ExecuteOrder(Order order, int index_order) {
   Stock stock = order.GetStock();
   std::string ticker = stock.GetTicker();
   int index_company = GetCompanyIndex(ticker);
-  int index_trader = GetTraderInd(order.GetTrader().GetId());
+  int index_trader = GetTraderIndex(order.GetTrader().GetId());
   Company company = GetCompanyByIndex(index_company);
   if ((stock.GetLowPrice() <= order.GetRate() && order.GetRate() <= stock.GetHighPrice())
       && company.GetQuantity() >= order.GetQuantity()

@@ -12,9 +12,9 @@ Company::Company(std::string name, std::string ticker, std::string category, dou
   this->quantity_stock_ = quantity_stock;
 }
 
-int Company::GetCategoryIndex(std::string s) {
+int Company::GetCategoryIndex(std::string name) {
   for (int i = 0; i < category_list.size(); ++i) {
-    if (s == category_list[i]) {
+    if (name == category_list[i]) {
       return i;
     }
   }

@@ -23,7 +23,7 @@ std::vector<std::string> OrderActionHandler::HandleAction(Action action) {
         std::string type = arguments[2];
         int quantity = std::stoi(arguments[3]);
         double rate = std::stod(arguments[4]);
-        int trader_index = context->GetTraderInd(id);
+        int trader_index = context->GetTraderIndex(id);
         int company_index = context->GetCompanyIndex(ticker);
         if (trader_index != -1) {
           if (company_index != -1) {
