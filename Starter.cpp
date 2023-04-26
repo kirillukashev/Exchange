@@ -71,12 +71,12 @@ std::vector<std::string> Starter::Interpret(std::vector<std::string> parsed) {
 }
 
 void Starter::StartSession() {
-  std::string s;
+  std::string data;
   while (true) {
-    std::getline(std::cin, s);
-    std::transform(s.begin(), s.end(), s.begin(), ::toupper);
+    std::getline(std::cin, data);
+    std::transform(data.begin(), data.end(), data.begin(), ::toupper);
     std::vector<std::string> parsed;
-    Split(s, parsed);
+    Split(data, parsed);
     if (!parsed.empty() && (parsed[0] == "EXIT"
                                || parsed[0] == "QUIT"
                                || parsed[0] == "Q")) {
