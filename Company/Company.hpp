@@ -14,7 +14,7 @@ class Company {
           double close_price, double low_price, double high_price, int quantity_stock);
   ~Company() = default;
 
-  static int GetCategoryIndex(std::string s);
+  static int GetCategoryIndex(std::string name);
   std::string GetName();
   void SetName(std::string name);
   int GetCategoryIndex();
