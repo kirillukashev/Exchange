@@ -1,7 +1,7 @@
 #include "CompanyActionHandler.hpp"
 
-CompanyActionHandler::CompanyActionHandler(StockExchange* se) :
-      ActionHandler(se, "ORDER") {}
+CompanyActionHandler::CompanyActionHandler(StockExchange* exchange) :
+      ActionHandler(exchange, "ORDER") {}
 
 std::vector<std::string> CompanyActionHandler::HandleAction(Action action) {
   std::vector<std::string> return_ans;

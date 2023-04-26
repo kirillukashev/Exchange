@@ -13,6 +13,6 @@ class OrderActionHandler : public ActionHandler {
  public:
   OrderActionHandler() = default;
   ~OrderActionHandler() = default;
-  OrderActionHandler(StockExchange* se);
+  OrderActionHandler(StockExchange* exchange);
   std::vector<std::string> HandleAction(Action action);
 };

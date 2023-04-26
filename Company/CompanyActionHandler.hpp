@@ -10,7 +10,7 @@
 class CompanyActionHandler : public ActionHandler {
  public:
   CompanyActionHandler() = default;
-  CompanyActionHandler(StockExchange* se);
+  CompanyActionHandler(StockExchange* exchange);
   ~CompanyActionHandler() = default;
   std::vector<std::string> HandleAction(Action action);
 };
