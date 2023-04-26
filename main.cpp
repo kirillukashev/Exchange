@@ -16,7 +16,7 @@ int main() {
   std::string stock_exchange_name;
   std::cin >> stock_exchange_name;
   std::cout << "\n";
-  StockExchange* exchange = new StockExchange(stock_exchange_name);
+  StockExchange *exchange = new StockExchange(stock_exchange_name);
 
   int control;
   do {
