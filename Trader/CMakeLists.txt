@@ -1,0 +1,1 @@
+add_library(trader Trader.cpp Trader.hpp TraderActionHandler.cpp TraderActionHandler.hpp)
