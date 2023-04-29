@@ -1,0 +1,41 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Order/Order.hpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Order/OrderActionHandler.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Order/OrderActionHandler.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include<iostream>
+        -:    4:#include <string>
+        -:    5:#include "../Trader/Trader.hpp"
+        -:    6:#include "../Company/Stock.hpp"
+        -:    7:#include "Type.hpp"
+        -:    8:
+        -:    9:class Order {
+        -:   10: public:
+        -:   11:  Order();
+        -:   12:  Order(Trader trader, Stock stock, Type type, int quantity, double rate);
+        -:   13:  Order(Trader trader, Stock stock, std::string type, int quantity, double rate);
+function _ZN5OrderD2Ev called 0 returned 0% blocks executed 0%
+    #####:   14:  ~Order() = default;
+    %%%%%:   14-block  0
+call    0 never executed
+call    1 never executed
+        -:   15:
+        -:   16:  Trader GetTrader();
+        -:   17:  void SetTrader(Trader trader);
+        -:   18:  Stock GetStock();
+        -:   19:  void SetStock(Stock stock);
+        -:   20:  Type GetType();
+        -:   21:  int GetQuantity();
+        -:   22:  void SetQuantity(int quantity);
+        -:   23:  double GetRate();
+        -:   24:  void SetRate(double rate);
+        -:   25:  std::string ToString();
+        -:   26:
+        -:   27: protected:
+        -:   28:  Trader trader_;
+        -:   29:  Stock stock_;
+        -:   30:  Type type_;
+        -:   31:  int quantity_ = 0;
+        -:   32:  double rate_ = 0.0;
+        -:   33:};

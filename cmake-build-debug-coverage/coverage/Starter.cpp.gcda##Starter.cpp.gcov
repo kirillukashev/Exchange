@@ -1,0 +1,616 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Starter.cpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Starter.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Starter.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Starter.hpp"
+        -:    2:
+function _ZN7Starter5SplitERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERSt6vectorIS5_SaIS5_EE called 0 returned 0% blocks executed 0%
+    #####:    3:void Starter::Split(const std::string& string, std::vector<std::string>& elems) {
+    #####:    4:  int start = 0;
+    #####:    5:  for (int i = 0; i < string.size(); ++i) {
+    %%%%%:    5-block  0
+    %%%%%:    5-block  1
+    %%%%%:    5-block  2
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:    6:    if (string[i] == ' ' || string[i] == ':' || string[i] == '{' || string[i] == '}'
+    %%%%%:    6-block  0
+call    0 never executed
+    %%%%%:    6-block  1
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:    6-block  2
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:    6-block  3
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####:    7:        || string[i] == ',' || string[i] == '"') {
+branch  0 never executed
+branch  1 never executed
+    %%%%%:    7-block  0
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:    7-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:    7-block  2
+    %%%%%:    7-block  3
+    %%%%%:    7-block  4
+branch  8 never executed
+branch  9 never executed
+    #####:    8:      if (i > start) {
+    %%%%%:    8-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:    9:        elems.push_back(string.substr(start, i - start));
+    %%%%%:    9-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:    9-block  1
+call    4 never executed
+    $$$$$:    9-block  2
+call    5 never executed
+    $$$$$:    9-block  3
+call    6 never executed
+        -:   10:      }
+    #####:   11:      start = i + 1;
+    %%%%%:   11-block  0
+        -:   12:    }
+        -:   13:  }
+    #####:   14:  int i = static_cast<int>(string.size()) - 1;
+    %%%%%:   14-block  0
+call    0 never executed
+    #####:   15:  if (string[i] == ' ' || string[i] == ':' || string[i] == '{' || string[i] == '}' || string[i] == ',' || i < start) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   15-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   15-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   15-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:   15-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:   15-block  4
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   15-block  5
+    %%%%%:   15-block  6
+    %%%%%:   15-block  7
+branch 17 never executed
+branch 18 never executed
+    #####:   16:    return;
+    %%%%%:   16-block  0
+        -:   17:  }
+    #####:   18:  elems.push_back(string.substr(start, i + 1 - start));
+    %%%%%:   18-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   18-block  1
+call    4 never executed
+    $$$$$:   18-block  2
+call    5 never executed
+        -:   19:}
+        -:   20:
+function _ZN7StarterC2EP13StockExchange called 0 returned 0% blocks executed 0%
+    #####:   21:Starter::Starter(StockExchange* exchange): context_() {
+    %%%%%:   21-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   22:  // registering action handlers
+    #####:   23:  this->company_action_handler_ = CompanyActionHandler(exchange);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   23-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   23-block  1
+call    6 never executed
+    $$$$$:   23-block  2
+call    7 never executed
+    $$$$$:   23-block  3
+    #####:   24:  this->trader_action_handler_ = TraderActionHandler(exchange);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   24-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   24-block  1
+call    6 never executed
+    $$$$$:   24-block  2
+call    7 never executed
+    $$$$$:   24-block  3
+    #####:   25:  this->order_action_handler_ = OrderActionHandler(exchange);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   25-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   25-block  1
+call    6 never executed
+    $$$$$:   25-block  2
+call    7 never executed
+    $$$$$:   25-block  3
+    #####:   26:}
+    $$$$$:   26-block  0
+call    0 never executed
+    $$$$$:   26-block  1
+call    1 never executed
+    $$$$$:   26-block  2
+call    2 never executed
+        -:   27:
+function _ZN7Starter9InterpretESt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EE called 0 returned 0% blocks executed 0%
+    #####:   28:std::vector<std::string> Starter::Interpret(std::vector<std::string> parsed) {
+    #####:   29:  if (!parsed.empty()) {
+    %%%%%:   29-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   30:    for (auto &i : parsed) {
+    %%%%%:   30-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:   30-block  1
+call    2 never executed
+    %%%%%:   30-block  2
+call    3 never executed
+    %%%%%:   30-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   31:      std::transform(i.begin(), i.end(), i.begin(), ::toupper);
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   32:    }
+    #####:   33:    std::string leader = parsed[0];
+    %%%%%:   33-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   34:    std::string actionTypeString;
+    %%%%%:   34-block  0
+call    0 never executed
+        -:   35:
+    #####:   36:    std::vector<std::string> arguments;
+call    0 never executed
+    #####:   37:    if (parsed.size() > 1) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   38:      actionTypeString = parsed[1];
+    %%%%%:   38-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   39:      if (parsed.size() > 2) {
+    %%%%%:   39-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   40:        arguments.resize(parsed.size() - 2);
+    %%%%%:   40-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   41:        std::copy(parsed.begin() + 2, parsed.end(), arguments.begin());
+    %%%%%:   41-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   41-block  1
+    $$$$$:   41-block  2
+        -:   42:      }
+        -:   43:    }
+        -:   44:
+    #####:   45:    Action action = Action(actionTypeString, arguments);
+    %%%%%:   45-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   45-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   45-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+    $$$$$:   45-block  3
+    $$$$$:   45-block  4
+        -:   46:
+    #####:   47:    if (leader == "COMPANY") {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   48:        return company_action_handler_.HandleAction(action);
+    %%%%%:   48-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   48-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   48-block  2
+call    6 never executed
+    $$$$$:   48-block  3
+call    7 never executed
+    $$$$$:   48-block  4
+    #####:   49:    } else if (leader == "TRADER") {
+    %%%%%:   49-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   50:        return trader_action_handler_.HandleAction(action);
+    %%%%%:   50-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   50-block  1
+    #####:   51:    } else if (leader == "ORDER") {
+    %%%%%:   51-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   52:        return order_action_handler_.HandleAction(action);
+    %%%%%:   52-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   52-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   52-block  2
+call    6 never executed
+    $$$$$:   52-block  3
+call    7 never executed
+    $$$$$:   52-block  4
+        -:   53:    }
+    #####:   54:  }
+    %%%%%:   54-block  0
+    %%%%%:   54-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   54-block  2
+    %%%%%:   54-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   54-block  4
+    %%%%%:   54-block  5
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   54-block  6
+    %%%%%:   54-block  7
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   54-block  8
+call   12 never executed
+    $$$$$:   54-block  9
+call   13 never executed
+    $$$$$:   54-block 10
+call   14 never executed
+    $$$$$:   54-block 11
+call   15 never executed
+        -:   55:  return  std::vector<std::string>{
+        -:   56:          "Usage:",
+        -:   57:          "  COMPANY:",
+        -:   58:          "    COMPANY SHOW ticker?",
+        -:   59:          "    COMPANY SHOW_CATEGORIES",
+        -:   60:          "    COMPANY SHOW_CATEGORY category?",
+        -:   61:          "    COMPANY ADD name? ticker? category? open_price? close_price? low_price? high_price? quantity_stock?",
+        -:   62:          "    COMPANY DELETE ticker?",
+        -:   63:          "  TRADER:",
+        -:   64:          "    TRADER SHOW id?",
+        -:   65:          "    TRADER ADD name? currency? holdings(format:\"{ticker:quantity, ticker2:quantity2}\")?",
+        -:   66:          "    TRADER DELETE id?",
+        -:   67:          "  ORDER:",
+        -:   68:          "    ORDER EXECUTE_ALL",
+        -:   69:          "    ORDER STAGE trader_id? stock_ticker? type(BUY/SELL)? quantity? rate?",
+    #####:   70:          "  EXIT (only in interpreter mode)"};
+    %%%%%:   70-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   70-block  1
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   70-block  2
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:   70-block  3
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:   70-block  4
+call   16 never executed
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:   70-block  5
+call   20 never executed
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:   70-block  6
+call   24 never executed
+call   25 never executed
+branch 26 never executed
+branch 27 never executed
+    %%%%%:   70-block  7
+call   28 never executed
+call   29 never executed
+branch 30 never executed
+branch 31 never executed
+    %%%%%:   70-block  8
+call   32 never executed
+call   33 never executed
+branch 34 never executed
+branch 35 never executed
+    %%%%%:   70-block  9
+call   36 never executed
+call   37 never executed
+branch 38 never executed
+branch 39 never executed
+    %%%%%:   70-block 10
+call   40 never executed
+call   41 never executed
+branch 42 never executed
+branch 43 never executed
+    %%%%%:   70-block 11
+call   44 never executed
+call   45 never executed
+branch 46 never executed
+branch 47 never executed
+    %%%%%:   70-block 12
+call   48 never executed
+call   49 never executed
+branch 50 never executed
+branch 51 never executed
+    %%%%%:   70-block 13
+call   52 never executed
+call   53 never executed
+branch 54 never executed
+branch 55 never executed
+    %%%%%:   70-block 14
+call   56 never executed
+call   57 never executed
+branch 58 never executed
+branch 59 never executed
+    %%%%%:   70-block 15
+call   60 never executed
+call   61 never executed
+branch 62 never executed
+branch 63 never executed
+    %%%%%:   70-block 16
+call   64 never executed
+    %%%%%:   70-block 17
+branch 65 never executed
+branch 66 never executed
+    %%%%%:   70-block 18
+call   67 never executed
+    %%%%%:   70-block 19
+call   68 never executed
+call   69 never executed
+call   70 never executed
+call   71 never executed
+call   72 never executed
+call   73 never executed
+call   74 never executed
+call   75 never executed
+call   76 never executed
+call   77 never executed
+call   78 never executed
+call   79 never executed
+call   80 never executed
+call   81 never executed
+call   82 never executed
+    $$$$$:   70-block 20
+call   83 never executed
+    $$$$$:   70-block 21
+    $$$$$:   70-block 22
+    $$$$$:   70-block 23
+branch 84 never executed
+branch 85 never executed
+    $$$$$:   70-block 24
+call   86 never executed
+    $$$$$:   70-block 25
+    $$$$$:   70-block 26
+call   87 never executed
+    $$$$$:   70-block 27
+    $$$$$:   70-block 28
+call   88 never executed
+    $$$$$:   70-block 29
+    $$$$$:   70-block 30
+call   89 never executed
+    $$$$$:   70-block 31
+    $$$$$:   70-block 32
+call   90 never executed
+    $$$$$:   70-block 33
+    $$$$$:   70-block 34
+call   91 never executed
+    $$$$$:   70-block 35
+    $$$$$:   70-block 36
+call   92 never executed
+    $$$$$:   70-block 37
+    $$$$$:   70-block 38
+call   93 never executed
+    $$$$$:   70-block 39
+    $$$$$:   70-block 40
+call   94 never executed
+    $$$$$:   70-block 41
+    $$$$$:   70-block 42
+call   95 never executed
+    $$$$$:   70-block 43
+    $$$$$:   70-block 44
+call   96 never executed
+    $$$$$:   70-block 45
+    $$$$$:   70-block 46
+call   97 never executed
+    $$$$$:   70-block 47
+    $$$$$:   70-block 48
+call   98 never executed
+    $$$$$:   70-block 49
+    $$$$$:   70-block 50
+call   99 never executed
+    $$$$$:   70-block 51
+    $$$$$:   70-block 52
+call   100 never executed
+    $$$$$:   70-block 53
+    $$$$$:   70-block 54
+call   101 never executed
+        -:   71:}
+        -:   72:
+function _ZN7Starter12StartSessionEv called 0 returned 0% blocks executed 0%
+    #####:   73:void Starter::StartSession() {
+    #####:   74:  std::string data;
+    %%%%%:   74-block  0
+call    0 never executed
+        -:   75:  while (true) {
+    #####:   76:    std::getline(std::cin, data);
+    %%%%%:   76-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   77:    std::transform(data.begin(), data.end(), data.begin(), ::toupper);
+    %%%%%:   77-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   78:    std::vector<std::string> parsed;
+    %%%%%:   78-block  0
+call    0 never executed
+    #####:   79:    Split(data, parsed);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   80:    if (!parsed.empty() && (parsed[0] == "EXIT"
+    %%%%%:   80-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   80-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   80-block  2
+    %%%%%:   80-block  3
+    %%%%%:   80-block  4
+branch  7 never executed
+branch  8 never executed
+    #####:   81:                               || parsed[0] == "QUIT"
+    %%%%%:   81-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   82:                               || parsed[0] == "Q")) {
+    %%%%%:   82-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   83:      return;
+    %%%%%:   83-block  0
+    %%%%%:   83-block  1
+        -:   84:    }
+    #####:   85:    std::vector<std::string> interpreted = Interpret(parsed);
+    %%%%%:   85-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   85-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   85-block  2
+    #####:   86:    for (const std::string& i : interpreted) {
+call    0 never executed
+call    1 never executed
+    %%%%%:   86-block  0
+call    2 never executed
+    %%%%%:   86-block  1
+call    3 never executed
+    %%%%%:   86-block  2
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   87:      std::cout << i << "\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   87-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   88:    }
+    #####:   89:  }
+    %%%%%:   89-block  0
+call    0 never executed
+    %%%%%:   89-block  1
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   89-block  2
+    $$$$$:   89-block  3
+call    4 never executed
+    $$$$$:   89-block  4
+call    5 never executed
+    #####:   90:}
+    %%%%%:   90-block  0
+call    0 never executed
+    $$$$$:   90-block  1
+call    1 never executed

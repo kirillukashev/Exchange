@@ -1,0 +1,30 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Actions/Action.cpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Actions/Action.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Actions/Action.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Action.hpp"
+        -:    2:
+        -:    3:#include <utility>
+        -:    4:
+function _ZN6ActionC2E10ActionTypeSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EE called 1 returned 100% blocks executed 100%
+        1:    5:Action::Action(ActionType action_type, std::vector<std::string> arguments) :
+        1:    6:       action_type(action_type), arguments(std::move(arguments)) {}
+        1:    6-block  0
+call    0 returned 1
+call    1 returned 1
+        -:    7:
+function _ZN6ActionC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS5_SaIS5_EE called 1 returned 100% blocks executed 80%
+        1:    8:Action::Action(std::string actionTypeString, std::vector<std::string> arguments) :
+        1:    9:       action_type(ActionHandler::GetActionType(std::move(actionTypeString))), arguments(std::move(arguments)) {}
+        1:    9-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:    9-block  1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:    9-block  2
+call    8 never executed

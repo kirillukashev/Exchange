@@ -1,3 +1,5 @@
 .idea/
 cmake-builgit d-debug
 cmake-build-debug
+build
+bin

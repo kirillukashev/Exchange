@@ -1,0 +1,918 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/StockExchange.cpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/StockExchange.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/StockExchange.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "StockExchange.hpp"
+        -:    2:
+function _ZN13StockExchangeC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 67%
+        1:    3:StockExchange::StockExchange(std::string name) {
+        1:    3-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:    4:  std::transform(name.begin(), name.end(), name.begin(), ::toupper);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:    5:  this->name_ = name;
+        1:    5-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    6:  traders_.resize(0);
+        1:    6-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    7:  companies_.resize(0);
+        1:    7-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    8:  orders_.resize(0);
+        1:    8-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    9:}
+        1:    9-block  0
+    $$$$$:    9-block  1
+call    0 never executed
+    $$$$$:    9-block  2
+call    1 never executed
+    $$$$$:    9-block  3
+call    2 never executed
+    $$$$$:    9-block  4
+call    3 never executed
+        -:   10:
+function _ZN13StockExchange9AddTraderE6Trader called 3 returned 100% blocks executed 100%
+        3:   11:bool StockExchange::AddTrader(Trader trader) {
+        3:   12:  if (GetTraderIndex(trader.GetId()) == -1) {
+        3:   12-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 1 (fallthrough)
+branch  3 taken 2
+        1:   13:    traders_.push_back(trader);
+        1:   13-block  0
+call    0 returned 1
+        1:   14:    return true;
+        -:   15:  }
+        2:   16:  return false;
+        2:   16-block  0
+        -:   17:}
+        -:   18:
+function _ZN13StockExchange12DeleteTraderB5cxx11El called 2 returned 100% blocks executed 56%
+        2:   19:std::string StockExchange::DeleteTrader(long id) {
+        2:   20:  int index = GetTraderIndex(id);
+        2:   20-block  0
+call    0 returned 2
+        2:   21:  if (index != -1) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:   22:    return DeleteTrader(index);
+    %%%%%:   22-block  0
+call    0 never executed
+        -:   23:  }
+        4:   24:  return ("Trader with id " + std::to_string(id) + " isn't registered with " + GetName());
+        2:   24-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   24-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   24-block  2
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+        2:   24-block  3
+call   10 returned 2
+branch 11 taken 2 (fallthrough)
+branch 12 taken 0 (throw)
+        2:   24-block  4
+call   13 returned 2
+call   14 returned 2
+call   15 returned 2
+call   16 returned 2
+    $$$$$:   24-block  5
+call   17 never executed
+    $$$$$:   24-block  6
+    $$$$$:   24-block  7
+call   18 never executed
+    $$$$$:   24-block  8
+    $$$$$:   24-block  9
+call   19 never executed
+    $$$$$:   24-block 10
+    $$$$$:   24-block 11
+call   20 never executed
+        -:   25:}
+        -:   26:
+function _ZN13StockExchange12DeleteTraderB5cxx11Ei called 2 returned 100% blocks executed 71%
+        2:   27:std::string StockExchange::DeleteTrader(int index) {
+       2*:   28:  for (std::vector<Trader>::iterator trader = traders_.begin(); trader != traders_.end(); ++trader) {
+        2:   28-block  0
+call    0 returned 2
+    %%%%%:   28-block  1
+call    1 never executed
+        2:   28-block  2
+call    2 returned 2
+call    3 returned 2
+branch  4 taken 1
+branch  5 taken 1 (fallthrough)
+        1:   29:    if (trader->GetId() == traders_[index].GetId()) {
+        1:   29-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   29-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   29-block  2
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0
+        1:   30:      std::string ans = ("Deleted " + traders_[index].ToString());
+        1:   30-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   30-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+    $$$$$:   30-block  2
+        1:   31:      traders_.erase(trader);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   31-block  0
+        1:   32:      return ans;
+        1:   32-block  0
+call    0 returned 1
+        1:   33:    }
+call    0 returned 1
+    $$$$$:   33-block  0
+call    1 never executed
+        -:   34:  }
+        2:   35:  return ("Failed to delete trader " + std::to_string(traders_[index].GetId()));
+        1:   35-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   35-block  1
+call    6 returned 1
+    $$$$$:   35-block  2
+call    7 never executed
+        -:   36:}
+        -:   37:
+function _ZN13StockExchange7GetNameB5cxx11Ev called 3 returned 100% blocks executed 100%
+        3:   38:std::string StockExchange::GetName() {
+        3:   39:  return name_;
+        3:   39-block  0
+call    0 returned 3
+        -:   40:}
+        -:   41:
+function _ZN13StockExchange11CheckTraderB5cxx11El called 2 returned 100% blocks executed 76%
+        2:   42:std::string StockExchange::CheckTrader(long id) {
+        3:   43:  for (Trader trader : traders_) {
+        2:   43-block  0
+call    0 returned 2
+call    1 returned 2
+        2:   43-block  1
+call    2 returned 2
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   43-block  2
+call    6 returned 1
+        3:   43-block  3
+call    7 returned 3
+branch  8 taken 2
+branch  9 taken 1 (fallthrough)
+        2:   44:    if (trader.GetId() == id) {
+        2:   44-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   44-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 1
+        1:   45:      return trader.ToString();
+        1:   45-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   45-block  1
+        -:   46:    }
+        2:   47:  }
+        1:   47-block  0
+        2:   47-block  1
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1
+    $$$$$:   47-block  2
+call    3 never executed
+        2:   48:  return ("Trader with id " + std::to_string(id) + " isn't registered");
+        1:   48-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   48-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   48-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   48-block  3
+call    9 never executed
+    $$$$$:   48-block  4
+    $$$$$:   48-block  5
+call   10 never executed
+        -:   49:}
+        -:   50:
+function _ZN13StockExchange14GetTraderIndexEl called 7 returned 100% blocks executed 100%
+        7:   51:int StockExchange::GetTraderIndex(long id)  {
+        9:   52:  for (int i = 0; i < traders_.size(); ++i) {
+        7:   52-block  0
+        2:   52-block  1
+        9:   52-block  2
+call    0 returned 9
+branch  1 taken 5
+branch  2 taken 4 (fallthrough)
+        5:   53:    if (traders_[i].GetId() == id) {
+        5:   53-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 3 (fallthrough)
+branch  3 taken 2
+        3:   54:      return i;
+        3:   54-block  0
+        -:   55:    }
+        -:   56:  }
+        4:   57:  return -1;
+        4:   57-block  0
+        -:   58:}
+        -:   59:
+function _ZN13StockExchange16GetTraderByIndexEi called 1 returned 100% blocks executed 100%
+        1:   60:Trader StockExchange::GetTraderByIndex(int index) {
+        1:   61:  return traders_[index];
+        1:   61-block  0
+call    0 returned 1
+call    1 returned 1
+        -:   62:}
+function _ZN13StockExchange12GetCompaniesEv called 1 returned 100% blocks executed 100%
+        1:   63:std::vector<Company> StockExchange::GetCompanies() {
+        1:   64:  return companies_;
+        1:   64-block  0
+call    0 returned 1
+        -:   65:}
+        -:   66:
+function _ZN13StockExchange15GetCompanyIndexENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 100% blocks executed 69%
+        4:   67:int StockExchange::GetCompanyIndex(std::string ticker) {
+        4:   68:  std::transform(ticker.begin(), ticker.end(), ticker.begin(), ::toupper);
+        4:   68-block  0
+call    0 returned 4
+call    1 returned 4
+call    2 returned 4
+call    3 returned 4
+       4*:   69:  for (int i = 0; i < companies_.size(); ++i) {
+    %%%%%:   69-block  0
+        4:   69-block  1
+call    0 returned 4
+branch  1 taken 2
+branch  2 taken 2 (fallthrough)
+        2:   70:    std::string tic = companies_[i].GetStock().GetTicker();
+        2:   70-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   70-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+    $$$$$:   70-block  2
+        2:   71:    if (companies_[i].GetStock().GetTicker() == ticker) {
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   71-block  0
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   71-block  1
+call    7 returned 2
+call    8 returned 2
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0
+    $$$$$:   71-block  2
+call   12 never executed
+    $$$$$:   71-block  3
+        2:   72:      return i;
+        2:   72-block  0
+        -:   73:    }
+       2*:   74:  }
+    %%%%%:   74-block  0
+        2:   74-block  1
+call    0 returned 2
+branch  1 taken 0 (fallthrough)
+branch  2 taken 2
+    $$$$$:   74-block  2
+call    3 never executed
+        2:   75:  return -1;
+        2:   75-block  0
+        -:   76:}
+        -:   77:
+function _ZN13StockExchange17GetCompanyByIndexEi called 1 returned 100% blocks executed 100%
+        1:   78:Company StockExchange::GetCompanyByIndex(int index) {
+        1:   79:  return companies_[index];
+        1:   79-block  0
+call    0 returned 1
+call    1 returned 1
+        -:   80:}
+        -:   81:
+function _ZN13StockExchange22GetCompaniesByCategoryENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 76%
+        1:   82:std::vector<Company> StockExchange::GetCompaniesByCategory(std::string ticker) {
+        1:   83:  std::vector<Company> return_ans;
+        1:   83-block  0
+call    0 returned 1
+        2:   84:  for (Company company : companies_) {
+call    0 returned 1
+call    1 returned 1
+        1:   84-block  0
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+        2:   84-block  1
+call    7 returned 2
+branch  8 taken 1
+branch  9 taken 1 (fallthrough)
+        1:   85:    if (company.GetCategory() == ticker) {
+        1:   85-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   85-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    #####:   86:      return_ans.push_back(company);
+    %%%%%:   86-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   87:    }
+        1:   88:  }
+        1:   88-block  0
+call    0 returned 1
+    $$$$$:   88-block  1
+call    1 never executed
+        1:   89:  return return_ans;
+        1:   89-block  0
+        1:   89-block  1
+    =====:   90:}
+    $$$$$:   90-block  0
+call    0 never executed
+        -:   91:
+function _ZN13StockExchange10AddCompanyE7Company called 1 returned 100% blocks executed 62%
+        1:   92:bool StockExchange::AddCompany(Company company) {
+        1:   93:  if (GetCompanyIndex(company.GetStock().GetTicker()) == -1) {
+        1:   93-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   93-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   93-block  2
+call    7 returned 1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+    $$$$$:   93-block  3
+call   11 never executed
+    $$$$$:   93-block  4
+    $$$$$:   93-block  5
+call   12 never executed
+        1:   94:    this->companies_.push_back(company);
+        1:   94-block  0
+call    0 returned 1
+        1:   95:    return true;
+        -:   96:  }
+    #####:   97:  return false;
+    %%%%%:   97-block  0
+        -:   98:}
+        -:   99:
+function _ZN13StockExchange13DeleteCompanyENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 100% blocks executed 63%
+        2:  100:std::string StockExchange::DeleteCompany(std::string ticker) {
+        2:  101:  int index = GetCompanyIndex(ticker);
+        2:  101-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  101-block  1
+call    4 returned 2
+    $$$$$:  101-block  2
+call    5 never executed
+    $$$$$:  101-block  3
+call    6 never executed
+        2:  102:  if (index != -1) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  103:    std::string ans = companies_[index].ToString();
+        1:  103-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  104:    companies_.erase(companies_.begin() + index);
+        1:  104-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  104-block  1
+    $$$$$:  104-block  2
+    $$$$$:  104-block  3
+        1:  105:    return ans;
+        1:  105-block  0
+call    0 returned 1
+        1:  106:  }
+call    0 returned 1
+    $$$$$:  106-block  0
+call    1 never executed
+        1:  107:  return "NULL";
+        1:  107-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  107-block  1
+call    4 returned 1
+    $$$$$:  107-block  2
+call    5 never executed
+        -:  108:}
+        -:  109:
+        -:  110:template<typename T>
+        4:  111:std::string StockExchange::ToString(std::vector<T> vector) {
+        4:  112:  std::string ans = "{";
+       5*:  113:  for (auto param : vector) {
+       1*:  114:    ans += param.ToString();
+        -:  115:  }
+        4:  116:  ans += "}";
+        4:  117:  return ans;
+    =====:  118:}
+------------------
+_ZN13StockExchange8ToStringI5OrderEENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIT_SaIS9_EE:
+function _ZN13StockExchange8ToStringI5OrderEENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIT_SaIS9_EE called 2 returned 100% blocks executed 39%
+        2:  111:std::string StockExchange::ToString(std::vector<T> vector) {
+        2:  112:  std::string ans = "{";
+        2:  112-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  112-block  1
+call    4 never executed
+       2*:  113:  for (auto param : vector) {
+call    0 returned 2
+call    1 returned 2
+    %%%%%:  113-block  0
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+        2:  113-block  1
+call    7 returned 2
+branch  8 taken 0
+branch  9 taken 2 (fallthrough)
+    $$$$$:  113-block  2
+call   10 never executed
+    #####:  114:    ans += param.ToString();
+    %%%%%:  114-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  114-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  114-block  2
+call    6 never executed
+call    7 never executed
+    $$$$$:  114-block  3
+call    8 never executed
+    $$$$$:  114-block  4
+        -:  115:  }
+        2:  116:  ans += "}";
+        2:  116-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  117:  return ans;
+        2:  117-block  0
+        2:  117-block  1
+    =====:  118:}
+    $$$$$:  118-block  0
+call    0 never executed
+------------------
+_ZN13StockExchange8ToStringI7CompanyEENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIT_SaIS9_EE:
+function _ZN13StockExchange8ToStringI7CompanyEENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIT_SaIS9_EE called 2 returned 100% blocks executed 64%
+        2:  111:std::string StockExchange::ToString(std::vector<T> vector) {
+        2:  112:  std::string ans = "{";
+        2:  112-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  112-block  1
+call    4 never executed
+        3:  113:  for (auto param : vector) {
+call    0 returned 2
+call    1 returned 2
+        1:  113-block  0
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+        3:  113-block  1
+call    7 returned 3
+branch  8 taken 1
+branch  9 taken 2 (fallthrough)
+    $$$$$:  113-block  2
+call   10 never executed
+        1:  114:    ans += param.ToString();
+        1:  114-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  114-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  114-block  2
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  114-block  3
+call    8 never executed
+    $$$$$:  114-block  4
+        -:  115:  }
+        2:  116:  ans += "}";
+        2:  116-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  117:  return ans;
+        2:  117-block  0
+        2:  117-block  1
+    =====:  118:}
+    $$$$$:  118-block  0
+call    0 never executed
+------------------
+        -:  119:
+function _ZN13StockExchange8AddOrderE5Order called 0 returned 0% blocks executed 0%
+    #####:  120:void StockExchange::AddOrder(Order order) {
+    #####:  121:  orders_.push_back(order);
+    %%%%%:  121-block  0
+call    0 never executed
+    #####:  122:}
+        -:  123:
+function _ZN13StockExchange9GetOrdersEv called 0 returned 0% blocks executed 0%
+    #####:  124:std::vector<Order> StockExchange::GetOrders() {
+    #####:  125:  return orders_;
+    %%%%%:  125-block  0
+call    0 never executed
+        -:  126:}
+        -:  127:
+function _ZN13StockExchange12ExecuteOrderB5cxx11E5Orderi called 0 returned 0% blocks executed 0%
+    #####:  128:std::string StockExchange::ExecuteOrder(Order order, int index_order) {
+    #####:  129:  Stock stock = order.GetStock();
+    %%%%%:  129-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  130:  std::string ticker = stock.GetTicker();
+    %%%%%:  130-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  131:  int index_company = GetCompanyIndex(ticker);
+    %%%%%:  131-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  131-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  131-block  2
+call    6 never executed
+    $$$$$:  131-block  3
+call    7 never executed
+    $$$$$:  131-block  4
+    #####:  132:  int index_trader = GetTraderIndex(order.GetTrader().GetId());
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  132-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  132-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  132-block  2
+call    9 never executed
+    $$$$$:  132-block  3
+call   10 never executed
+    $$$$$:  132-block  4
+    #####:  133:  Company company = GetCompanyByIndex(index_company);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  134:  if ((stock.GetLowPrice() <= order.GetRate() && order.GetRate() <= stock.GetHighPrice())
+    %%%%%:  134-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  134-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  134-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  134-block  3
+branch  9 never executed
+branch 10 never executed
+    #####:  135:      && company.GetQuantity() >= order.GetQuantity()
+    %%%%%:  135-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  135-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  135-block  2
+branch  6 never executed
+branch  7 never executed
+    #####:  136:      && order.GetQuantity() * order.GetRate() <= order.GetTrader().GetCurrency()) {
+    %%%%%:  136-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  136-block  1
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  136-block  2
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  136-block  3
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:  136-block  4
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    %%%%%:  136-block  5
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:  136-block  6
+branch 17 never executed
+branch 18 never executed
+    %%%%%:  136-block  7
+    %%%%%:  136-block  8
+    %%%%%:  136-block  9
+branch 19 never executed
+branch 20 never executed
+    %%%%%:  136-block 10
+call   21 never executed
+    %%%%%:  136-block 11
+branch 22 never executed
+branch 23 never executed
+    $$$$$:  136-block 12
+branch 24 never executed
+branch 25 never executed
+    $$$$$:  136-block 13
+call   26 never executed
+    $$$$$:  136-block 14
+    #####:  137:    companies_[index_company].SetQuantity(companies_[index_company].GetQuantity() - order.GetQuantity());
+    %%%%%:  137-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  137-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  137-block  2
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    #####:  138:    int actual_quan = traders_[index_trader].GetHolding(order.GetStock());
+    %%%%%:  138-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  138-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  138-block  2
+call    7 never executed
+    $$$$$:  138-block  3
+call    8 never executed
+    $$$$$:  138-block  4
+    #####:  139:    traders_[index_trader].PutHolding(order.GetStock(), actual_quan + order.GetQuantity());
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  139-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  139-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  139-block  2
+call   10 never executed
+    $$$$$:  139-block  3
+call   11 never executed
+    $$$$$:  139-block  4
+    #####:  140:    traders_[index_trader].SetCurrency(traders_[index_trader].GetCurrency() - order.GetQuantity() * order.GetRate());
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  140-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  140-block  1
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:  140-block  2
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    #####:  141:    orders_.erase(orders_.begin() + index_order);
+    %%%%%:  141-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  141-block  1
+    $$$$$:  141-block  2
+    $$$$$:  141-block  3
+    #####:  142:    return order.ToString() + "Accepted!";
+    %%%%%:  142-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  142-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  142-block  2
+call    6 never executed
+    $$$$$:  142-block  3
+call    7 never executed
+    $$$$$:  142-block  4
+        -:  143:  } else {
+    #####:  144:    return order.ToString() + "Failed!";
+    %%%%%:  144-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  144-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  144-block  2
+call    6 never executed
+    $$$$$:  144-block  3
+call    7 never executed
+    $$$$$:  144-block  4
+        -:  145:  }
+    #####:  146:}
+    %%%%%:  146-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:  146-block  1
+call    3 never executed
+    $$$$$:  146-block  2
+call    4 never executed
+    $$$$$:  146-block  3
+call    5 never executed
+        -:  147:
+function _ZN13StockExchange8ToStringB5cxx11Ev called 2 returned 100% blocks executed 45%
+        2:  148:std::string StockExchange::ToString() {
+        4:  149:  std::string return_ans =  "StockExchange {name='" + name_ + '\'' +
+        2:  149-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  149-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  149-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 2
+call   10 returned 2
+call   11 returned 2
+    $$$$$:  149-block  3
+    $$$$$:  149-block  4
+    $$$$$:  149-block  5
+        8:  150:                            ", publiclyListedCompanies=" + ToString(companies_) +
+        2:  150-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  150-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  150-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:  150-block  3
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+call   12 returned 2
+call   13 returned 2
+call   14 returned 2
+call   15 returned 2
+    $$$$$:  150-block  4
+    $$$$$:  150-block  5
+    $$$$$:  150-block  6
+    $$$$$:  150-block  7
+        8:  151:                            ", orders=" + ToString(orders_) + '}';
+        2:  151-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  151-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:  151-block  2
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 2
+call   11 returned 2
+    $$$$$:  151-block  3
+    $$$$$:  151-block  4
+        2:  152:  return return_ans;
+        2:  152-block  0
+        -:  153:}

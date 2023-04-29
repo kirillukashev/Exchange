@@ -1,0 +1,42 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Company/Company.hpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Company/CompanyActionHandler.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Company/CompanyActionHandler.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include <string>
+        -:    4:#include <vector>
+        -:    5:#include <algorithm>
+        -:    6:#include "Stock.hpp"
+        -:    7:
+        -:    8:const std::vector<std::string> category_list = {"ENERGY", "MATERIALS", "INDUSTRY", "FINANCE", "IT"};
+        -:    9:
+        -:   10:class Company {
+        -:   11: public:
+        -:   12:  Company();
+        -:   13:  Company(std::string name, std::string ticker, std::string category, double open_price,
+        -:   14:          double close_price, double low_price, double high_price, int quantity_stock);
+function _ZN7CompanyD2Ev called 0 returned 0% blocks executed 0%
+    #####:   15:  ~Company() = default;
+    %%%%%:   15-block  0
+call    0 never executed
+call    1 never executed
+        -:   16:
+        -:   17:  static int GetCategoryIndex(std::string name);
+        -:   18:  std::string GetName();
+        -:   19:  void SetName(std::string name);
+        -:   20:  int GetCategoryIndex();
+        -:   21:  void SetCategoryIndex(int category_index);
+        -:   22:  Stock GetStock();
+        -:   23:  void SetStock(Stock stock);
+        -:   24:  std::string GetCategory();
+        -:   25:  void SetCategory(std::string category);
+        -:   26:  int GetQuantity();
+        -:   27:  void SetQuantity(int quantity_stock);
+        -:   28:  std::string ToString();
+        -:   29: private:
+        -:   30:  std::string name_;
+        -:   31:  int category_index_;
+        -:   32:  Stock stock_;
+        -:   33:  int quantity_stock_;
+        -:   34:};

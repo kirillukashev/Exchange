@@ -1,0 +1,27 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Trader/TraderActionHandler.hpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Starter.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Starter.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include <iostream>
+        -:    4:#include <vector>
+        -:    5:#include "../Actions/ActionType.hpp"
+        -:    6:#include "../Actions/Action.hpp"
+        -:    7:#include "Trader.hpp"
+        -:    8:#include "../Actions/ActionHandler.hpp"
+        -:    9:#include "../Company/Company.hpp"
+        -:   10:
+        -:   11:class TraderActionHandler : public ActionHandler {
+        -:   12: public:
+function _ZN19TraderActionHandlerC2Ev called 0 returned 0% blocks executed 0%
+    #####:   13:  TraderActionHandler() = default;
+    %%%%%:   13-block  0
+call    0 never executed
+function _ZN19TraderActionHandlerD2Ev called 0 returned 0% blocks executed 0%
+    #####:   14:  ~TraderActionHandler() = default;
+    %%%%%:   14-block  0
+call    0 never executed
+        -:   15:  TraderActionHandler(StockExchange* exchange);
+        -:   16:  std::vector<std::string> HandleAction(const Action& action);
+        -:   17:};

@@ -1,0 +1,283 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Company/Company.cpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Company/Company.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Company/Company.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Company.hpp"
+        -:    2:
+function _ZN7CompanyC2Ev called 0 returned 0% blocks executed 0%
+    #####:    3:Company::Company() {}
+    %%%%%:    3-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:    3-block  1
+    $$$$$:    3-block  2
+call    4 never executed
+        -:    4:
+function _ZN7CompanyC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_S5_ddddi called 1 returned 100% blocks executed 70%
+        1:    5:Company::Company(std::string name, std::string ticker, std::string category, double open_price, double close_price,
+        1:    6:                 double low_price, double high_price, int quantity_stock) {
+        1:    6-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:    7:  std::transform(name.begin(), name.end(), name.begin(), ::toupper);
+        1:    7-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:    8:  this->name_ = name;
+        1:    8-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    9:  std::transform(category.begin(), category.end(), category.begin(), ::toupper);
+        1:    9-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   10:  this->category_index_ = GetCategoryIndex(category);
+        1:   10-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   10-block  1
+call    3 returned 1
+call    4 returned 1
+        1:   11:  this->stock_ = Stock(ticker, open_price, close_price, low_price, high_price);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   11-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   11-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   11-block  2
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   11-block  3
+call   11 never executed
+    $$$$$:   11-block  4
+    $$$$$:   11-block  5
+call   12 never executed
+    $$$$$:   11-block  6
+        1:   12:  this->quantity_stock_ = quantity_stock;
+        1:   13:}
+    $$$$$:   13-block  0
+call    0 never executed
+    $$$$$:   13-block  1
+call    1 never executed
+        -:   14:
+function _ZN7Company16GetCategoryIndexENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 90%
+        1:   15:int Company::GetCategoryIndex(std::string name) {
+        5:   16:  for (int i = 0; i < category_list.size(); ++i) {
+        1:   16-block  0
+        4:   16-block  1
+        5:   16-block  2
+call    0 returned 5
+branch  1 taken 5
+branch  2 taken 0 (fallthrough)
+        5:   17:    if (name == category_list[i]) {
+        5:   17-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 1 (fallthrough)
+branch  3 taken 4
+        1:   18:      return i;
+        1:   18-block  0
+        -:   19:    }
+        -:   20:  }
+    #####:   21:  return -1;
+    %%%%%:   21-block  0
+        -:   22:}
+        -:   23:
+function _ZN7Company7GetNameB5cxx11Ev called 4 returned 100% blocks executed 100%
+        4:   24:std::string Company::GetName() {
+        4:   25:  return this->name_;
+        4:   25-block  0
+call    0 returned 4
+        -:   26:}
+        -:   27:
+function _ZN7Company7SetNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   28:void Company::SetName(std::string name) {
+    #####:   29:  this->name_ = name;
+    %%%%%:   29-block  0
+call    0 never executed
+    #####:   30:}
+        -:   31:
+function _ZN7Company16GetCategoryIndexEv called 0 returned 0% blocks executed 0%
+    #####:   32:int Company::GetCategoryIndex() {
+    #####:   33:  return this->category_index_;
+    %%%%%:   33-block  0
+        -:   34:}
+        -:   35:
+function _ZN7Company16SetCategoryIndexEi called 0 returned 0% blocks executed 0%
+    #####:   36:void Company::SetCategoryIndex(int category_index) {
+    #####:   37:  this->category_index_ = category_index;
+    #####:   38:}
+        -:   39:
+function _ZN7Company8GetStockEv called 5 returned 100% blocks executed 100%
+        5:   40:Stock Company::GetStock() {
+        5:   41:  return this->stock_;
+        5:   41-block  0
+call    0 returned 5
+        -:   42:}
+        -:   43:
+function _ZN7Company8SetStockE5Stock called 0 returned 0% blocks executed 0%
+    #####:   44:void Company::SetStock(Stock stock) {
+    #####:   45:  this->stock_ = stock;
+    %%%%%:   45-block  0
+call    0 never executed
+    #####:   46:}
+        -:   47:
+function _ZN7Company11GetCategoryB5cxx11Ev called 3 returned 100% blocks executed 100%
+        3:   48:std::string Company::GetCategory() {
+        3:   49:  return category_list[this->category_index_];
+        3:   49-block  0
+call    0 returned 3
+call    1 returned 3
+        -:   50:}
+        -:   51:
+function _ZN7Company11SetCategoryENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   52:void Company::SetCategory(std::string category) {
+    #####:   53:  for (int i = 0; i < category_list.size(); ++i) {
+    %%%%%:   53-block  0
+    %%%%%:   53-block  1
+    %%%%%:   53-block  2
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   54:    if (category == category_list[i]) {
+    %%%%%:   54-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   55:      this->category_index_ = i;
+    #####:   56:      break;
+    %%%%%:   56-block  0
+        -:   57:    }
+        -:   58:  }
+    #####:   59:  throw std::invalid_argument("This category does not exist");
+    %%%%%:   59-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   59-block  1
+call    4 never executed
+    $$$$$:   59-block  2
+call    5 never executed
+        -:   60:}
+        -:   61:
+function _ZN7Company11GetQuantityEv called 2 returned 100% blocks executed 100%
+        2:   62:int Company::GetQuantity() {
+        2:   63:  return this->quantity_stock_;
+        2:   63-block  0
+        -:   64:}
+        -:   65:
+function _ZN7Company11SetQuantityEi called 0 returned 0% blocks executed 0%
+    #####:   66:void Company::SetQuantity(int quantity_stock) {
+    #####:   67:  this->quantity_stock_ = quantity_stock;
+    #####:   68:}
+        -:   69:
+function _ZN7Company8ToStringB5cxx11Ev called 2 returned 100% blocks executed 47%
+        2:   70:std::string Company::ToString() {
+        4:   71:  return "Company{name = '" + GetName() + "', category = '" + GetCategory() + ", quantity_stock = " + std::to_string(GetQuantity())
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   71-block  0
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   71-block  1
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+        2:   71-block  2
+call   10 returned 2
+branch 11 taken 2 (fallthrough)
+branch 12 taken 0 (throw)
+        2:   71-block  3
+call   13 returned 2
+branch 14 taken 2 (fallthrough)
+branch 15 taken 0 (throw)
+        2:   71-block  4
+call   16 returned 2
+branch 17 taken 2 (fallthrough)
+branch 18 taken 0 (throw)
+        2:   71-block  5
+call   19 returned 2
+branch 20 taken 2 (fallthrough)
+branch 21 taken 0 (throw)
+        2:   71-block  6
+call   22 returned 2
+branch 23 taken 2 (fallthrough)
+branch 24 taken 0 (throw)
+call   25 returned 2
+call   26 returned 2
+call   27 returned 2
+call   28 returned 2
+call   29 returned 2
+call   30 returned 2
+call   31 returned 2
+    $$$$$:   71-block  7
+call   32 never executed
+    $$$$$:   71-block  8
+    $$$$$:   71-block  9
+call   33 never executed
+    $$$$$:   71-block 10
+    $$$$$:   71-block 11
+call   34 never executed
+    $$$$$:   71-block 12
+    $$$$$:   71-block 13
+call   35 never executed
+    $$$$$:   71-block 14
+    $$$$$:   71-block 15
+call   36 never executed
+    $$$$$:   71-block 16
+    $$$$$:   71-block 17
+call   37 never executed
+    $$$$$:   71-block 18
+    $$$$$:   71-block 19
+call   38 never executed
+    $$$$$:   71-block 20
+    $$$$$:   71-block 21
+call   39 never executed
+    $$$$$:   71-block 22
+        8:   72:  + "', stock = " + this->stock_.ToString();
+        2:   72-block  0
+call    0 returned 2
+        2:   72-block  1
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   72-block  2
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   72-block  3
+call    7 returned 2
+call    8 returned 2
+call    9 returned 2
+        2:   72-block  4
+    $$$$$:   72-block  5
+call   10 never executed
+    $$$$$:   72-block  6
+    $$$$$:   72-block  7
+call   11 never executed
+        -:   73:}

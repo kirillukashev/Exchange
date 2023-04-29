@@ -1,0 +1,23 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Actions/Action.hpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Starter.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Starter.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include "ActionHandler.hpp"
+        -:    4:#include "ActionType.hpp"
+        -:    5:#include <iostream>
+        -:    6:#include <vector>
+        -:    7:
+        -:    8:class Action {
+        -:    9: public:
+        -:   10:  ActionType action_type;
+        -:   11:  std::vector<std::string> arguments;
+        -:   12:
+        -:   13:  Action(ActionType action_type, std::vector<std::string> arguments);
+        -:   14:  Action(std::string actionTypeString, std::vector<std::string> arguments);
+function _ZN6ActionD2Ev called 0 returned 0% blocks executed 0%
+    #####:   15:  ~Action() = default;
+    %%%%%:   15-block  0
+call    0 never executed
+        -:   16:};

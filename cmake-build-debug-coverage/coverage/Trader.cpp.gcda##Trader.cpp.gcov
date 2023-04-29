@@ -1,0 +1,341 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Trader/Trader.cpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Trader/Trader.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Trader/Trader.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Trader.hpp"
+        -:    2:
+function _ZN6Trader8ToStringB5cxx11Ev called 2 returned 100% blocks executed 46%
+        2:    3:std::string Trader::ToString() {
+        4:    4:  std::string return_ans = "Trader{id = " + std::to_string(id_) +
+        2:    4-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:    4-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 2
+call    7 returned 2
+call    8 returned 2
+    $$$$$:    4-block  2
+    $$$$$:    4-block  3
+    $$$$$:    4-block  4
+        6:    5:                           ", name = " + name_ +
+        2:    5-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:    5-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:    5-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 2
+call   10 returned 2
+    $$$$$:    5-block  3
+    $$$$$:    5-block  4
+        8:    6:                           ", currency = " + std::to_string(currency_) +
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:    6-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:    6-block  1
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 2
+call   10 returned 2
+call   11 returned 2
+    $$$$$:    6-block  2
+    $$$$$:    6-block  3
+    $$$$$:    6-block  4
+        4:    7:                           ", holdings = " + ToStringHoldings();
+        2:    7-block  0
+call    0 returned 2
+        2:    7-block  1
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:    8:  return return_ans;
+        2:    8-block  0
+        -:    9:}
+        -:   10:
+function _ZN6Trader10PutHoldingE5Stocki called 0 returned 0% blocks executed 0%
+    #####:   11:void Trader::PutHolding(Stock stock, int quantity) {
+    #####:   12:  holdings_[stock.HashCode()] = {stock, quantity};
+    %%%%%:   12-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   12-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   12-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   12-block  3
+call   10 never executed
+    $$$$$:   12-block  4
+    $$$$$:   12-block  5
+call   11 never executed
+    #####:   13:}
+        -:   14:
+function _ZN6Trader16ToStringHoldingsB5cxx11Ev called 2 returned 100% blocks executed 12%
+        2:   15:std::string Trader::ToStringHoldings() {
+        2:   16:  if (holdings_.size() == 0) {
+        2:   16-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0
+        2:   17:    return "{}";
+        2:   17-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   17-block  1
+call    4 returned 2
+    $$$$$:   17-block  2
+call    5 never executed
+    $$$$$:   17-block  3
+        -:   18:  }
+    #####:   19:  std::string return_str = "{";
+    %%%%%:   19-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   19-block  1
+    #####:   20:  for (auto it = holdings_.begin(); it != holdings_.end();) {
+call    0 never executed
+    %%%%%:   20-block  0
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:   21:    Stock stock = (it->second).first;
+    %%%%%:   21-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   22:    return_str += "{stock = " + stock.GetTicker() + ", quantity = "
+    %%%%%:   22-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   22-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   22-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:   22-block  3
+call   11 never executed
+    $$$$$:   22-block  4
+    $$$$$:   22-block  5
+call   12 never executed
+    $$$$$:   22-block  6
+    $$$$$:   22-block  7
+call   13 never executed
+    $$$$$:   22-block  8
+    #####:   23:               + std::to_string(holdings_[stock.HashCode()].second) + "}";
+    %%%%%:   23-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   23-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   23-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   23-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:   23-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:   23-block  5
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:   23-block  6
+call   18 never executed
+call   19 never executed
+call   20 never executed
+call   21 never executed
+    $$$$$:   23-block  7
+call   22 never executed
+    $$$$$:   23-block  8
+    $$$$$:   23-block  9
+call   23 never executed
+    $$$$$:   23-block 10
+    $$$$$:   23-block 11
+call   24 never executed
+    $$$$$:   23-block 12
+    $$$$$:   23-block 13
+    #####:   24:    it++;
+call    0 never executed
+    #####:   25:    if (it != holdings_.end()) {
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   26:      return_str += ", ";
+    %%%%%:   26-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   27:    }
+    #####:   28:  }
+    %%%%%:   28-block  0
+call    0 never executed
+    $$$$$:   28-block  1
+call    1 never executed
+    #####:   29:  return_str += "}";
+    %%%%%:   29-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   30:  return return_str;
+    %%%%%:   30-block  0
+call    0 never executed
+    #####:   31:}
+call    0 never executed
+    $$$$$:   31-block  0
+call    1 never executed
+        -:   32:
+function _ZN6Trader11GetHoldingsEv called 0 returned 0% blocks executed 0%
+    #####:   33:std::unordered_map<int, std::pair<Stock, int>> Trader::GetHoldings() {
+    #####:   34:  return holdings_;
+    %%%%%:   34-block  0
+call    0 never executed
+        -:   35:}
+        -:   36:
+function _ZN6Trader10GetHoldingE5Stock called 0 returned 0% blocks executed 0%
+    #####:   37:int Trader::GetHolding(Stock stock) {
+    #####:   38:  return holdings_[stock.HashCode()].second;
+    %%%%%:   38-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   38-block  1
+    %%%%%:   38-block  2
+        -:   39:}
+        -:   40:
+function _ZN6Trader11SetHoldingsESt13unordered_mapIiSt4pairI5StockiESt4hashIiESt8equal_toIiESaIS1_IKiS3_EEE called 0 returned 0% blocks executed 0%
+    #####:   41:void Trader::SetHoldings(std::unordered_map<int, std::pair<Stock, int>> holdings) {
+    #####:   42:  this->holdings_ = holdings;
+    %%%%%:   42-block  0
+call    0 never executed
+    #####:   43:}
+        -:   44:
+function _ZN6Trader11SetCurrencyEd called 0 returned 0% blocks executed 0%
+    #####:   45:void Trader::SetCurrency(double currency) {
+    #####:   46:  this->currency_ = currency;
+    #####:   47:}
+        -:   48:
+function _ZN6TraderC2Ev called 0 returned 0% blocks executed 0%
+    #####:   49:Trader::Trader() {}
+    %%%%%:   49-block  0
+call    0 never executed
+call    1 never executed
+        -:   50:
+function _ZN6TraderC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEdSt13unordered_mapIiSt4pairI5StockiESt4hashIiESt8equal_toIiESaIS7_IKiS9_EEE called 0 returned 0% blocks executed 0%
+    #####:   51:Trader::Trader(std::string name, double currency, std::unordered_map<int, std::pair<Stock, int>> holdings) :
+    #####:   52:        name_(name), currency_(currency), holdings_(holdings), id_(++count) {}
+    %%%%%:   52-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   52-block  1
+    $$$$$:   52-block  2
+call    4 never executed
+        -:   53:
+function _ZN6TraderC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEd called 2 returned 100% blocks executed 50%
+        2:   54:Trader::Trader(std::string name, double currency) : name_(name), currency_(currency), id_(++count), holdings_({}) {}
+        2:   54-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:   54-block  1
+call    5 returned 2
+    $$$$$:   54-block  2
+    $$$$$:   54-block  3
+    $$$$$:   54-block  4
+call    6 never executed
+    $$$$$:   54-block  5
+    $$$$$:   54-block  6
+call    7 never executed
+        -:   55:
+function _ZN6Trader5GetIdEv called 13 returned 100% blocks executed 100%
+       13:   56:long Trader::GetId() {
+       13:   57:  return id_;
+       13:   57-block  0
+        -:   58:}
+        -:   59:
+function _ZN6Trader5SetIdEl called 0 returned 0% blocks executed 0%
+    #####:   60:void Trader::SetId(long id) {
+    #####:   61:  this->id_ = id;
+    #####:   62:}
+        -:   63:
+function _ZN6Trader7GetNameB5cxx11Ev called 2 returned 100% blocks executed 100%
+        2:   64:std::string Trader::GetName() {
+        2:   65:  return name_;
+        2:   65-block  0
+call    0 returned 2
+        -:   66:}
+        -:   67:
+function _ZN6Trader7SetNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   68:void Trader::SetName(std::string name) {
+    #####:   69:  this->name_ = name;
+    %%%%%:   69-block  0
+call    0 never executed
+    #####:   70:}
+        -:   71:
+function _ZN6Trader11GetCurrencyEv called 0 returned 0% blocks executed 0%
+    #####:   72:double Trader::GetCurrency() {
+    #####:   73:  return currency_;
+    %%%%%:   73-block  0
+        -:   74:}
+        -:   75:
+function _ZN6Trader11PutCurrencyEd called 0 returned 0% blocks executed 0%
+    #####:   76:double Trader::PutCurrency(double currency) {
+    #####:   77:  if (GetCurrency() + currency < 0.0) {
+    %%%%%:   77-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   78:    return 0.0;
+    %%%%%:   78-block  0
+        -:   79:  } else {
+    #####:   80:    SetCurrency(GetCurrency() + currency);
+    %%%%%:   80-block  0
+call    0 never executed
+call    1 never executed
+    #####:   81:    return currency;
+        -:   82:  }
+        -:   83:}

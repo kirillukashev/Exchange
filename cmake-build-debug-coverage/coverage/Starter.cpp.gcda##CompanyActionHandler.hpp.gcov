@@ -1,0 +1,26 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Company/CompanyActionHandler.hpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Starter.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Starter.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include <string>
+        -:    4:#include <vector>
+        -:    5:#include "../Actions/ActionHandler.hpp"
+        -:    6:#include "../Actions/ActionType.hpp"
+        -:    7:#include "../Actions/Action.hpp"
+        -:    8:#include "Company.hpp"
+        -:    9:
+        -:   10:class CompanyActionHandler : public ActionHandler {
+        -:   11: public:
+function _ZN20CompanyActionHandlerC2Ev called 0 returned 0% blocks executed 0%
+    #####:   12:  CompanyActionHandler() = default;
+    %%%%%:   12-block  0
+call    0 never executed
+        -:   13:  CompanyActionHandler(StockExchange* exchange);
+function _ZN20CompanyActionHandlerD2Ev called 0 returned 0% blocks executed 0%
+    #####:   14:  ~CompanyActionHandler() = default;
+    %%%%%:   14-block  0
+call    0 never executed
+        -:   15:  std::vector<std::string> HandleAction(Action action);
+        -:   16:};

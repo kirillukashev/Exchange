@@ -1,0 +1,587 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Trader/TraderActionHandler.cpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Trader/TraderActionHandler.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Trader/TraderActionHandler.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "TraderActionHandler.hpp"
+        -:    2:
+function _ZN19TraderActionHandlerC2EP13StockExchange called 0 returned 0% blocks executed 0%
+    #####:    3:TraderActionHandler::TraderActionHandler(StockExchange* exchange) :
+    #####:    4:        ActionHandler(exchange, "TRADER") {}
+    %%%%%:    4-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:    4-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:    4-block  2
+call    7 never executed
+call    8 never executed
+    $$$$$:    4-block  3
+call    9 never executed
+    $$$$$:    4-block  4
+    $$$$$:    4-block  5
+call   10 never executed
+        -:    5:
+function _ZN19TraderActionHandler12HandleActionB5cxx11ERK6Action called 0 returned 0% blocks executed 0%
+    #####:    6:std::vector<std::string> TraderActionHandler::HandleAction(const Action& action) {
+    #####:    7:  std::vector<std::string> return_ans;
+    %%%%%:    7-block  0
+call    0 never executed
+    #####:    8:  std::vector<std::string> arguments = action.arguments;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:    9:
+    #####:   10:  switch (action.action_type) {
+    %%%%%:   10-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   11:    case SHOW:
+    #####:   12:      if (arguments.size() == 1) {
+    %%%%%:   12-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   13:        long id = std::stol(arguments[0]);
+    %%%%%:   13-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   14:        return_ans.push_back(context->CheckTrader(id));
+    %%%%%:   14-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   14-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   14-block  2
+call    6 never executed
+    $$$$$:   14-block  3
+call    7 never executed
+    $$$$$:   14-block  4
+        -:   15:      } else {
+    #####:   16:        return_ans.push_back("Usage: TRADER SHOW id?");
+    %%%%%:   16-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   16-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   16-block  2
+call    7 never executed
+call    8 never executed
+    $$$$$:   16-block  3
+call    9 never executed
+    $$$$$:   16-block  4
+    $$$$$:   16-block  5
+call   10 never executed
+    $$$$$:   16-block  6
+        -:   17:      }
+    #####:   18:      break;
+    %%%%%:   18-block  0
+        -:   19:
+    #####:   20:    case ADD:
+    #####:   21:      if (arguments.size() == 2) {
+    %%%%%:   21-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   22:        std::string name = arguments[0];
+    %%%%%:   22-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   23:        double currency = std::stod(arguments[1]);
+    %%%%%:   23-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   24:        Trader t = Trader(name, currency);
+    %%%%%:   24-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   24-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   24-block  2
+        -:   25:
+    #####:   26:        if (context->AddTrader(t)) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   26-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   26-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:   26-block  2
+call    9 never executed
+    $$$$$:   26-block  3
+    #####:   27:            return_ans.push_back("Added " + t.ToString());
+    %%%%%:   27-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   27-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   27-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   27-block  3
+call    9 never executed
+call   10 never executed
+    $$$$$:   27-block  4
+call   11 never executed
+    $$$$$:   27-block  5
+    $$$$$:   27-block  6
+call   12 never executed
+    $$$$$:   27-block  7
+    #####:   28:          break;
+        -:   29:        } else {
+    #####:   30:          return_ans.push_back("Failed to add trader '" + name + "'");
+    %%%%%:   30-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   30-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   30-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   30-block  3
+call    9 never executed
+call   10 never executed
+    $$$$$:   30-block  4
+call   11 never executed
+    $$$$$:   30-block  5
+    $$$$$:   30-block  6
+call   12 never executed
+    $$$$$:   30-block  7
+        -:   31:        }
+    #####:   32:      }
+    %%%%%:   32-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   32-block  1
+    %%%%%:   32-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   32-block  3
+call    6 never executed
+    $$$$$:   32-block  4
+call    7 never executed
+    #####:   33:      if (arguments.size() >= 3) {
+    %%%%%:   33-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   34:        std::string name = arguments[0];
+    %%%%%:   34-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   35:        double currency = std::stod(arguments[1]);
+    %%%%%:   35-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   36:        Trader trader = Trader(name, currency);
+    %%%%%:   36-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   36-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   36-block  2
+    #####:   37:        std::string holdings_string;
+call    0 never executed
+    #####:   38:        if (arguments.size() >= 4 && arguments.size() % 2 == 0) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   38-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   38-block  1
+    %%%%%:   38-block  2
+    %%%%%:   38-block  3
+branch  6 never executed
+branch  7 never executed
+    #####:   39:          for (int i = 2; i < arguments.size(); i += 2) {
+    %%%%%:   39-block  0
+    %%%%%:   39-block  1
+    %%%%%:   39-block  2
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   40:            int index = context->GetCompanyIndex(arguments[i]);
+    %%%%%:   40-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   40-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   40-block  2
+call    7 never executed
+    $$$$$:   40-block  3
+call    8 never executed
+    $$$$$:   40-block  4
+    #####:   41:            if (index != -1) {
+branch  0 never executed
+branch  1 never executed
+    #####:   42:              trader.PutHolding(context->GetCompanyByIndex(index).GetStock(), std::stoi(arguments[i + 1]));
+    %%%%%:   42-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   42-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   42-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   42-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   42-block  4
+call   13 never executed
+call   14 never executed
+    $$$$$:   42-block  5
+call   15 never executed
+    $$$$$:   42-block  6
+    $$$$$:   42-block  7
+call   16 never executed
+    $$$$$:   42-block  8
+        -:   43:            } else {
+    #####:   44:              return_ans.push_back("Failed to add holding {" + arguments[i] + ": " + arguments[i + 1] + "}");
+    %%%%%:   44-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   44-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   44-block  2
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:   44-block  3
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    %%%%%:   44-block  4
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:   44-block  5
+call   17 never executed
+call   18 never executed
+call   19 never executed
+call   20 never executed
+    $$$$$:   44-block  6
+call   21 never executed
+    $$$$$:   44-block  7
+    $$$$$:   44-block  8
+call   22 never executed
+    $$$$$:   44-block  9
+    $$$$$:   44-block 10
+call   23 never executed
+    $$$$$:   44-block 11
+    $$$$$:   44-block 12
+call   24 never executed
+    $$$$$:   44-block 13
+        -:   45:            }
+        -:   46:          }
+        -:   47:
+    #####:   48:          if (context->AddTrader(trader)) {
+    %%%%%:   48-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   48-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   48-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:   48-block  3
+call    9 never executed
+    $$$$$:   48-block  4
+    #####:   49:            return_ans.push_back("Added " + trader.ToString());
+    %%%%%:   49-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   49-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   49-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   49-block  3
+call    9 never executed
+call   10 never executed
+    $$$$$:   49-block  4
+call   11 never executed
+    $$$$$:   49-block  5
+    $$$$$:   49-block  6
+call   12 never executed
+    $$$$$:   49-block  7
+    #####:   50:            break;
+        -:   51:          } else {
+    #####:   52:            return_ans.push_back("Failed to add trader '" + name + "'");
+    %%%%%:   52-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   52-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   52-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   52-block  3
+call    9 never executed
+call   10 never executed
+    $$$$$:   52-block  4
+call   11 never executed
+    $$$$$:   52-block  5
+    $$$$$:   52-block  6
+call   12 never executed
+    $$$$$:   52-block  7
+        -:   53:          }
+        -:   54:        }
+    #####:   55:      }
+    %%%%%:   55-block  0
+    %%%%%:   55-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   55-block  2
+    %%%%%:   55-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   55-block  4
+    %%%%%:   55-block  5
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:   55-block  6
+call    9 never executed
+    $$$$$:   55-block  7
+call   10 never executed
+    $$$$$:   55-block  8
+call   11 never executed
+    #####:   56:      return_ans.push_back(
+    %%%%%:   56-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   56-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   56-block  2
+call    7 never executed
+call    8 never executed
+    $$$$$:   56-block  3
+call    9 never executed
+    $$$$$:   56-block  4
+    $$$$$:   56-block  5
+call   10 never executed
+    $$$$$:   56-block  6
+        -:   57:              "Usage: TRADER ADD name? currency? holdings(format:\'{ticker: quantity, ticker2: quantity2, ...}\")?");
+    #####:   58:      break;
+        -:   59:
+    #####:   60:    case DELETE:
+    #####:   61:      if (arguments.size() == 1) {
+    %%%%%:   61-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   62:        std::string id_str = arguments[0];
+    %%%%%:   62-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   63:        return_ans.push_back(context->DeleteTrader(std::stol(id_str)));
+    %%%%%:   63-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   63-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   63-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   63-block  3
+call    9 never executed
+    $$$$$:   63-block  4
+call   10 never executed
+    $$$$$:   63-block  5
+    #####:   64:      } else {
+call    0 never executed
+    $$$$$:   64-block  0
+call    1 never executed
+    #####:   65:        return_ans.push_back("Usage: TRADER DELETE id?");
+    %%%%%:   65-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   65-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   65-block  2
+call    7 never executed
+call    8 never executed
+    $$$$$:   65-block  3
+call    9 never executed
+    $$$$$:   65-block  4
+    $$$$$:   65-block  5
+call   10 never executed
+    $$$$$:   65-block  6
+        -:   66:      }
+    #####:   67:      break;
+    %%%%%:   67-block  0
+        -:   68:
+    #####:   69:    default:
+    #####:   70:      return_ans.push_back("Usage:");
+    %%%%%:   70-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   70-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   70-block  2
+call    7 never executed
+call    8 never executed
+    $$$$$:   70-block  3
+call    9 never executed
+    $$$$$:   70-block  4
+    $$$$$:   70-block  5
+call   10 never executed
+    $$$$$:   70-block  6
+    #####:   71:      return_ans.push_back("  TRADER SHOW id?");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   71-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   71-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   71-block  2
+call    9 never executed
+    $$$$$:   71-block  3
+    $$$$$:   71-block  4
+call   10 never executed
+    $$$$$:   71-block  5
+    #####:   72:      return_ans.push_back(
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   72-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   72-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   72-block  2
+call    9 never executed
+    $$$$$:   72-block  3
+    $$$$$:   72-block  4
+call   10 never executed
+    $$$$$:   72-block  5
+        -:   73:              "  TRADER ADD name? currency? holdings(format:\"{ticker:quantity, ticker2:quantity2, ...}\")?");
+    #####:   74:      return_ans.push_back("  TRADER DELETE id?");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   74-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   74-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   74-block  2
+call    9 never executed
+    $$$$$:   74-block  3
+    $$$$$:   74-block  4
+call   10 never executed
+    $$$$$:   74-block  5
+        -:   75:  }
+    #####:   76:  return return_ans;
+    %%%%%:   76-block  0
+    %%%%%:   76-block  1
+    #####:   77:}
+    %%%%%:   77-block  0
+call    0 never executed
+    $$$$$:   77-block  1
+call    1 never executed
+    $$$$$:   77-block  2
+call    2 never executed

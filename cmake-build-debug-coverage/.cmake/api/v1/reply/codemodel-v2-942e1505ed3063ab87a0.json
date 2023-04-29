@@ -1,0 +1,202 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "Actions",
+					"jsonFile" : "directory-Actions-Debug-56d2800e9aac6e9f6952.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Actions",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "Company",
+					"jsonFile" : "directory-Company-Debug-d81ef45466a787b6b789.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Company",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "Order",
+					"jsonFile" : "directory-Order-Debug-6d058c486cf65463bf51.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Order",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "Trader",
+					"jsonFile" : "directory-Trader-Debug-0ca41b2bb9ed3e185801.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "Trader",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "tests",
+					"jsonFile" : "directory-tests-Debug-b01f6abb0ab61427ef3b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5
+					],
+					"name" : "Exchange",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "trader",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ExchangeCheck::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ExchangeCheck-Debug-d8722ef21b85f646577f.json",
+					"name" : "ExchangeCheck",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ExchangeTest::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-ExchangeTest-Debug-7030dbed799db4f1a693.json",
+					"name" : "ExchangeTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "action::@46e56702ce9ce244698d",
+					"jsonFile" : "target-action-Debug-38fb36f36642fbe087ff.json",
+					"name" : "action",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "company::@bd47d7470a9cd26e638f",
+					"jsonFile" : "target-company-Debug-9c1a241ccc1a871f35cb.json",
+					"name" : "company",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "order::@5d4f2663b84beb4120b3",
+					"jsonFile" : "target-order-Debug-8fc88f061b70350cc0f1.json",
+					"name" : "order",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "trader::@e4187daf6c59d6f9ab56",
+					"jsonFile" : "target-trader-Debug-c6c9f966136301df6beb.json",
+					"name" : "trader",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage",
+		"source" : "/home/lisa/CLionProjects/Exchange"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

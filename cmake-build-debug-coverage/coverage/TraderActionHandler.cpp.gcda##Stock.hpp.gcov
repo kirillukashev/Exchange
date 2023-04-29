@@ -1,0 +1,39 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Company/Stock.hpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Trader/TraderActionHandler.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Trader/TraderActionHandler.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include <iostream>
+        -:    4:#include <string>
+        -:    5:#include <algorithm>
+        -:    6:
+        -:    7:class Stock {
+        -:    8: public:
+        -:    9:  Stock();
+        -:   10:  Stock(std::string ticker, double open_price, double close_price, double low_price, double high_price);
+function _ZN5StockD2Ev called 0 returned 0% blocks executed 0%
+    #####:   11:  ~Stock() = default;
+    %%%%%:   11-block  0
+call    0 never executed
+        -:   12:
+        -:   13:  std::string GetTicker();
+        -:   14:  void SetTicker(std::string ticker);
+        -:   15:
+        -:   16:  double GetOpenPrice();
+        -:   17:  void SetOpenPrice(double open_price);
+        -:   18:  double GetClosePrice();
+        -:   19:  void SetClosePrice(double close_price);
+        -:   20:  double GetLowPrice();
+        -:   21:  void SetLowPrice(double high_price);
+        -:   22:  double GetHighPrice();
+        -:   23:  void SetHighPrice(double high_price);
+        -:   24:  std::string ToString();
+        -:   25:  int HashCode();
+        -:   26: private:
+        -:   27:  std::string ticker_;
+        -:   28:  double open_price_;
+        -:   29:  double close_price_;
+        -:   30:  double low_price_;
+        -:   31:  double high_price_;
+        -:   32:};

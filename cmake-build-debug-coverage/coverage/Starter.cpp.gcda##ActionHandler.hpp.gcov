@@ -1,0 +1,28 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Actions/ActionHandler.hpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Starter.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Starter.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include "ActionType.hpp"
+        -:    4:#include <iostream>
+        -:    5:#include <algorithm>
+        -:    6:#include "../StockExchange.hpp"
+        -:    7:
+        -:    8:class ActionHandler {
+        -:    9: public:
+        -:   10:  StockExchange* context;
+        -:   11:  std::string action_leader;
+        -:   12:
+function _ZN13ActionHandlerC2Ev called 0 returned 0% blocks executed 0%
+    #####:   13:  ActionHandler() = default;
+    %%%%%:   13-block  0
+call    0 never executed
+        -:   14:  ActionHandler(StockExchange* context, std::string lead);
+function _ZN13ActionHandlerD2Ev called 0 returned 0% blocks executed 0%
+    #####:   15:  ~ActionHandler() = default;
+    %%%%%:   15-block  0
+call    0 never executed
+        -:   16:  static std::string GetActionString(ActionType action);
+        -:   17:  static ActionType GetActionType(std::string actionString);
+        -:   18:};

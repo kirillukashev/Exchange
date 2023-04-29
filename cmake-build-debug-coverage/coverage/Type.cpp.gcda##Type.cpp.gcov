@@ -1,0 +1,163 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Order/Type.cpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Order/Type.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Order/Type.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Type.hpp"
+        -:    2:
+function _ZN4Type17GetStringFromTypeB5cxx11E9OrderType called 0 returned 0% blocks executed 0%
+    #####:    3:std::string Type::GetStringFromType(OrderType type) {
+    #####:    4:  switch (type) {
+    %%%%%:    4-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:    5:    case BUY:
+    #####:    6:      return "BUY";
+    %%%%%:    6-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:    6-block  1
+call    4 never executed
+    $$$$$:    6-block  2
+call    5 never executed
+    $$$$$:    6-block  3
+call    6 never executed
+    #####:    7:    case SELL:
+    #####:    8:      return "SELL";
+    %%%%%:    8-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:    8-block  1
+call    4 never executed
+    $$$$$:    8-block  2
+call    5 never executed
+    $$$$$:    8-block  3
+call    6 never executed
+    #####:    9:    case TRANSACTION:
+    #####:   10:      return "TRANSACTION";
+    %%%%%:   10-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   10-block  1
+call    4 never executed
+    $$$$$:   10-block  2
+call    5 never executed
+    $$$$$:   10-block  3
+call    6 never executed
+    #####:   11:    default:
+    #####:   12:      return "NULL";
+    %%%%%:   12-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   12-block  1
+call    4 never executed
+    $$$$$:   12-block  2
+call    5 never executed
+        -:   13:  }
+        -:   14:}
+        -:   15:
+function _ZN4Type17GetTypeFromStringENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   16:OrderType Type::GetTypeFromString(std::string type) {
+    #####:   17:  std::transform(type.begin(), type.end(), type.begin(), ::toupper);
+    %%%%%:   17-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    #####:   18:  if (type.size() > 0) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   19:    if (type == "BUY") {
+    %%%%%:   19-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   20:      return OrderType::BUY;
+    %%%%%:   20-block  0
+    #####:   21:    } else if (type == "SELL") {
+    %%%%%:   21-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   22:      return OrderType::SELL;
+    %%%%%:   22-block  0
+    #####:   23:    } else if (type == "TRANSACTION") {
+    %%%%%:   23-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   24:      return OrderType::TRANSACTION;
+    %%%%%:   24-block  0
+        -:   25:    }
+        -:   26:  }
+    #####:   27:  return OrderType::NULL1;
+    %%%%%:   27-block  0
+        -:   28:}
+        -:   29:
+function _ZN4TypeC2Ev called 0 returned 0% blocks executed 0%
+    #####:   30:Type::Type() {}
+        -:   31:
+function _ZN4TypeC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   32:Type::Type(std::string type) {
+    #####:   33:  this->type_ = GetTypeFromString(type);
+    %%%%%:   33-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   33-block  1
+call    4 never executed
+    $$$$$:   33-block  2
+call    5 never executed
+    #####:   34:}
+        -:   35:
+function _ZN4TypeC2E9OrderType called 0 returned 0% blocks executed 0%
+    #####:   36:Type::Type(OrderType type) {
+    #####:   37:  this->type_ = type;
+    #####:   38:}
+        -:   39:
+function _ZN4Type12GetOrderTypeEv called 0 returned 0% blocks executed 0%
+    #####:   40:OrderType Type::GetOrderType() {
+    #####:   41:  return this->type_;
+    %%%%%:   41-block  0
+        -:   42:}
+        -:   43:
+function _ZN4Type14GetOrderStringB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:   44:std::string Type::GetOrderString() {
+    #####:   45:  return GetStringFromType(this->type_);
+    %%%%%:   45-block  0
+call    0 never executed
+        -:   46:}
+        -:   47:
+function _ZN4Type8ToStringB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:   48:std::string Type::ToString() {
+    #####:   49:  return "Type{type=" + GetOrderString() + "}";
+    %%%%%:   49-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   49-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   49-block  2
+call    7 never executed
+call    8 never executed
+    %%%%%:   49-block  3
+    $$$$$:   49-block  4
+call    9 never executed
+    $$$$$:   49-block  5
+    $$$$$:   49-block  6
+call   10 never executed
+        -:   50:}

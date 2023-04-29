@@ -1,0 +1,28 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/Order/OrderActionHandler.hpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Starter.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/__/Starter.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include<iostream>
+        -:    4:#include <string>
+        -:    5:#include <vector>
+        -:    6:#include "../Actions/ActionHandler.hpp"
+        -:    7:#include "../Actions/ActionType.hpp"
+        -:    8:#include "../Actions/Action.hpp"
+        -:    9:#include "../Company/Company.hpp"
+        -:   10:#include "Order.hpp"
+        -:   11:
+        -:   12:class OrderActionHandler : public ActionHandler {
+        -:   13: public:
+function _ZN18OrderActionHandlerC2Ev called 0 returned 0% blocks executed 0%
+    #####:   14:  OrderActionHandler() = default;
+    %%%%%:   14-block  0
+call    0 never executed
+function _ZN18OrderActionHandlerD2Ev called 0 returned 0% blocks executed 0%
+    #####:   15:  ~OrderActionHandler() = default;
+    %%%%%:   15-block  0
+call    0 never executed
+        -:   16:  OrderActionHandler(StockExchange* exchange);
+        -:   17:  std::vector<std::string> HandleAction(Action action);
+        -:   18:};

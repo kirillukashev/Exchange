@@ -1,0 +1,57 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/StockExchange.hpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/ExchangeTest.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/ExchangeTest.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include <iostream>
+        -:    4:#include <vector>
+        -:    5:#include <algorithm>
+        -:    6:#include <string>
+        -:    7:#include "Trader/Trader.hpp"
+        -:    8:#include "Company/Company.hpp"
+        -:    9:#include "Order/Order.hpp"
+        -:   10:
+        -:   11:class StockExchange {
+        -:   12: public:
+function _ZN13StockExchangeC2Ev called 2 returned 100% blocks executed 100%
+        2:   13:  StockExchange() = default;
+        2:   13-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+        -:   14:  StockExchange(std::string name);
+function _ZN13StockExchangeD2Ev called 3 returned 100% blocks executed 100%
+        3:   15:  ~StockExchange() = default;
+        3:   15-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+call    3 returned 3
+        -:   16:
+        -:   17:  std::vector<Company> GetCompanies();
+        -:   18:  Company GetCompanyByIndex(int index);
+        -:   19:  int GetCompanyIndex(std::string ticker);
+        -:   20:  std::vector<Company> GetCompaniesByCategory(std::string ticker);
+        -:   21:  bool AddCompany(Company company);
+        -:   22:  std::string DeleteCompany(std::string ticker);
+        -:   23:  int GetTraderIndex(long id);
+        -:   24:  Trader GetTraderByIndex(int index);
+        -:   25:  std::string CheckTrader(long id);
+        -:   26:  bool AddTrader(Trader trader);
+        -:   27:  std::string DeleteTrader(int index);
+        -:   28:  std::string DeleteTrader(long id);
+        -:   29:  std::string ToString();
+        -:   30:  std::string GetName();
+        -:   31:  void AddOrder(Order order);
+        -:   32:  std::vector<Order> GetOrders();
+        -:   33:  std::string ExecuteOrder(Order order, int index_order);
+        -:   34:  template<typename T>
+        -:   35:  std::string ToString(std::vector<T> vector);
+        -:   36: private:
+        -:   37:  std::string name_;
+        -:   38:  std::vector<Company> companies_;
+        -:   39:  std::vector<Trader> traders_;
+        -:   40:  std::vector<Order> orders_;
+        -:   41:};

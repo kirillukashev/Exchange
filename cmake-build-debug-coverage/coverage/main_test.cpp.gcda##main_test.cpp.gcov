@@ -1,0 +1,17 @@
+        -:    0:Source:/home/lisa/CLionProjects/Exchange/tests/main_test.cpp
+        -:    0:Graph:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/main_test.cpp.gcno
+        -:    0:Data:/home/lisa/CLionProjects/Exchange/cmake-build-debug-coverage/tests/CMakeFiles/ExchangeTest.dir/main_test.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by lisa on 29.04.23.
+        -:    3://
+        -:    4:#include <gtest/gtest.h>
+        -:    5:
+function main called 1 returned 100% blocks executed 100%
+        1:    6:int main(int argc, char** argv) {
+        1:    7:    ::testing::InitGoogleTest(&argc, argv);
+        1:    7-block  0
+call    0 returned 1
+        1:    8:    return RUN_ALL_TESTS();
+call    0 returned 1
+        -:    9:}
