@@ -4,7 +4,7 @@
 #include <vector>
 #include "../Actions/ActionType.hpp"
 #include "../Actions/Action.hpp"
-#include "Trader.hpp"
+#include "../Trader/Trader.hpp"
 #include "../Actions/ActionHandler.hpp"
 #include "../Company/Company.hpp"
 
