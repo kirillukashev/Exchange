@@ -18,7 +18,7 @@ The program receives a prescribed scenario of actions on the exchange, and then 
 ## System requirements
 
 > C++ 14\
-> CMake VERSION 3.23
+> CMake VERSION 3.2
 
 ## Project build
 ```bash

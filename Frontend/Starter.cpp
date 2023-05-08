@@ -1,12 +1,12 @@
 #include "Starter.hpp"
 
-void Starter::Split(const std::string& string, std::vector<std::string>& elems) {
+void Starter::Split(const std::string& string, std::vector<std::string>& elements) {
   int start = 0;
   for (int i = 0; i < string.size(); ++i) {
     if (string[i] == ' ' || string[i] == ':' || string[i] == '{' || string[i] == '}'
         || string[i] == ',' || string[i] == '"') {
       if (i > start) {
-        elems.push_back(string.substr(start, i - start));
+        elements.push_back(string.substr(start, i - start));
       }
       start = i + 1;
     }
@@ -15,7 +15,7 @@ void Starter::Split(const std::string& string, std::vector<std::string>& elems) 
   if (string[i] == ' ' || string[i] == ':' || string[i] == '{' || string[i] == '}' || string[i] == ',' || i < start) {
     return;
   }
-  elems.push_back(string.substr(start, i + 1 - start));
+  elements.push_back(string.substr(start, i + 1 - start));
 }
 
 Starter::Starter(StockExchange* exchange): context_() {
