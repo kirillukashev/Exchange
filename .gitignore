@@ -1,3 +1,6 @@
 .idea/
 cmake-builgit d-debug
 cmake-build-debug
+bin
+build
+cmake-build-debug-coverage

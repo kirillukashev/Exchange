@@ -2,11 +2,11 @@
 
 #include <iostream>
 #include <vector>
-#include "../Actions/ActionType.hpp"
-#include "../Actions/Action.hpp"
-#include "../Trader/Trader.hpp"
-#include "../Actions/ActionHandler.hpp"
-#include "../Company/Company.hpp"
+#include "../Backend/Actions/ActionType.hpp"
+#include "../Backend/Actions/Action.hpp"
+#include "../Backend/Trader/Trader.hpp"
+#include "../Backend/Actions/ActionHandler.hpp"
+#include "../Backend/Company/Company.hpp"
 
 class TraderActionHandler : public ActionHandler {
  public:
